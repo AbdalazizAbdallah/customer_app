@@ -39,6 +39,7 @@ dependencies:
   dio: ^4.0.6
   pretty_dio_logger: ^1.2.0-beta-1
   flutter_dotenv: ^5.0.2
+  flutter_svg: ^1.1.5
 
 dev_dependencies:
   flutter_test:
@@ -65,8 +66,8 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - .env
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+    - assets/images/
+    - assets/svg/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -79,10 +80,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+    - family: SFUIText
+      fonts:
+        - asset: assets/fonts/SFUIText-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
