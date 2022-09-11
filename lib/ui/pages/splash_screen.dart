@@ -1,8 +1,9 @@
 import 'package:customer_app/core/constants/colors_app.dart';
 import 'package:customer_app/core/constants/images_app.dart';
+import 'package:customer_app/core/constants/sizes_app.dart';
+import 'package:customer_app/core/constants/styles_app.dart';
 import 'package:flutter/material.dart';
-
-import '../../core/constants/sizes_app.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -21,12 +22,12 @@ class SplashScreen extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Flexible(
+            const Flexible(
               flex: 1,
-              child: Container(),
+              child: SizedBox.expand(),
             ),
             Flexible(
-              flex: 3,
+              flex: 5,
               child: Row(
                 children: [
                   Flexible(
@@ -62,7 +63,23 @@ class SplashScreen extends StatelessWidget {
                           ),
                         ),
                         child: Column(
-                          children: [],
+                          children: [
+                            SizedBox(
+                              height: SizesApp.r111,
+                            ),
+                            SvgPicture.asset(
+                              ImagesApp.wholeLogoPath,
+                            ),
+                            SizedBox(
+                              height: SizesApp.r111,
+                            ),
+                            Text(
+                              '2018',
+                              style: StylesApp.subtitle1.copyWith(
+                                color: ColorsApp.white,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
