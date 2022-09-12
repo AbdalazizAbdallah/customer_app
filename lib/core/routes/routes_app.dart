@@ -1,5 +1,6 @@
 import 'package:customer_app/home_page.dart';
-import 'package:customer_app/ui/pages/onboarding_screen.dart';
+import 'package:customer_app/ui/pages/onboarding_screen/bindings/onboarding_screen_binding.dart';
+import 'package:customer_app/ui/pages/onboarding_screen/pages/onboarding_screen.dart';
 import 'package:customer_app/ui/pages/splash_screen.dart';
 import 'package:get/get.dart';
 
@@ -21,6 +22,7 @@ class RoutesApp {
       GetPage(
         name: initialPage,
         page: () => const OnboardingScreen(),
+        binding: OnboardingScreenBinding(),
       ),
     ];
   }
