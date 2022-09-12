@@ -9,6 +9,7 @@ class ColorsApp {
   static late Color info;
 
   static Color transparent = Colors.transparent;
+  static Color grey = const Color(0xFF899597);
   static Color black = Colors.black87;
   static Color white = Colors.white;
 }
