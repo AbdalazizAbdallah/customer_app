@@ -37,7 +37,7 @@ class OnboardingScreen extends GetView<OnboardingScreenController> {
                   widget: SvgPicture.asset(ImagesApp.imageOnboardingPath),
                 ),
                 PageViewItemWidget(
-                  widget: SvgPicture.asset(ImagesApp.imageOnboardingPath),
+                  widget: SvgPicture.asset(ImagesApp.imageOnboarding2Path),
                 ),
                 PageViewItemWidget(
                   widget: Lottie.asset(
