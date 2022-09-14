@@ -1,0 +1,18 @@
+<svg height="8.859" viewBox="0 0 15.349 8.859" width="15.349" xmlns="http://www.w3.org/2000/svg">
+    <g id="dining-room-furniture" transform="translate(-25.164 -9.702)">
+        <g data-name="Group 248" id="Group_248" transform="translate(25.164 9.702)">
+            <path
+                d="M26.044,290.111h-.019l-.3-4.91h-.558v8.593h.558l.161-1.841h2.724l.228,1.841h.319v-3.683h-3.11Zm2.526,1.535H25.91l.054-.614h2.53Z"
+                data-name="Path 1057" fill="#fff" id="Path_1057"
+                transform="translate(-25.164 -285.201)" />
+            <path
+                d="M389.219,290.111H385.86v3.683h.549l.228-1.841h2.724l.161,1.841h.635V285.2h-.635Zm.115,1.535h-2.66l.076-.614h2.53Z"
+                data-name="Path 1058" fill="#fff" id="Path_1058"
+                transform="translate(-374.808 -285.201)" />
+            <path
+                d="M99.632,328.263v-.881c0-.133-.071-.24-.158-.24H92.422c-.087,0-.158.107-.158.24v.881c0,.132.071.24.158.24h2v.544h.719V333.1c0,.011,0,.02,0,.03h-.721v.544h3.055v-.544h-.721c0-.01,0-.02,0-.03v-4.052h.719V328.5h2C99.561,328.5,99.632,328.4,99.632,328.263Z"
+                data-name="Path 1059" fill="#fff" id="Path_1059"
+                transform="translate(-88.274 -324.815)" />
+        </g>
+    </g>
+</svg>

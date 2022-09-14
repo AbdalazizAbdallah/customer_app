@@ -88,11 +88,10 @@ flutter:
     - family: SFUIText
       fonts:
         - asset: assets/fonts/SFUIText-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
+    #         style: italic
+    - family: dinNext
+      fonts:
+        - asset: assets/fonts/din-next-lt-w23-regular.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
