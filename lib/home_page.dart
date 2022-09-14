@@ -1,3 +1,4 @@
+import 'package:customer_app/ui/widgets/card_restaurant_offer_widget.dart';
 import 'package:customer_app/ui/widgets/card_restaurant_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -10,8 +11,17 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Fast eat'),
       ),
-      body: const Center(
-        child: CardRestaurantWidget(),
+      body: Center(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              CardRestaurantWidget(),
+              CardRestaurantOfferWidget(offerText: '30% Off'),
+              CardRestaurantOfferWidget(offerText: 'day & night'),
+            ],
+          ),
+        ),
       ),
     );
   }
