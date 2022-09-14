@@ -2,7 +2,6 @@ import 'package:customer_app/home_page.dart';
 import 'package:customer_app/ui/pages/onboarding_screen/bindings/onboarding_screen_binding.dart';
 import 'package:customer_app/ui/pages/onboarding_screen/pages/onboarding_screen.dart';
 import 'package:customer_app/ui/pages/splash_screen.dart';
-import 'package:customer_app/ui/widgets/card_resturant_widget.dart';
 import 'package:get/get.dart';
 
 class RoutesApp {
@@ -14,7 +13,7 @@ class RoutesApp {
   static List<GetPage> getPages() {
     return <GetPage>[
       GetPage(
-        name: homePage,
+        name: initialPage,
         page: () => const HomePage(),
       ),
       GetPage(
@@ -25,10 +24,6 @@ class RoutesApp {
         name: onboardingScreen,
         page: () => const OnboardingScreen(),
         binding: OnboardingScreenBinding(),
-      ),
-      GetPage(
-        name: initialPage,
-        page: () => const CardRestaurantWidget(),
       ),
     ];
   }
