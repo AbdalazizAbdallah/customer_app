@@ -28,7 +28,7 @@ class RoutesApp {
       ),
       GetPage(
         name: initialPage,
-        page: () => const CardResturantWidget(),
+        page: () => const CardRestaurantWidget(),
       ),
     ];
   }

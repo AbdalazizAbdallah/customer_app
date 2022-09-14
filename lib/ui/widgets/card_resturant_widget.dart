@@ -7,8 +7,8 @@ import 'package:customer_app/core/constants/styles_app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class CardResturantWidget extends StatelessWidget {
-  const CardResturantWidget({Key? key}) : super(key: key);
+class CardRestaurantWidget extends StatelessWidget {
+  const CardRestaurantWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
