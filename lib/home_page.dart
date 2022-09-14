@@ -1,5 +1,5 @@
+import 'package:customer_app/ui/widgets/card_restaurant_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -10,8 +10,8 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Fast eat'),
       ),
-      body: Center(
-        child: Text('hello_world'.tr),
+      body: const Center(
+        child: CardRestaurantWidget(),
       ),
     );
   }

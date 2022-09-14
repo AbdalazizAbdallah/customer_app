@@ -65,17 +65,17 @@ class SplashScreen extends StatelessWidget {
                         child: Column(
                           children: [
                             SizedBox(
-                              height: SizesApp.r111,
+                              height: SizesApp.r112,
                             ),
                             SvgPicture.asset(
                               ImagesApp.wholeLogoPath,
                             ),
                             SizedBox(
-                              height: SizesApp.r111,
+                              height: SizesApp.r112,
                             ),
                             Text(
                               '2018',
-                              style: StylesApp.subtitle1.copyWith(
+                              style: StylesApp.subtitle1SFUIT.copyWith(
                                 color: ColorsApp.white,
                               ),
                             ),

@@ -8,11 +8,12 @@ class RoutesApp {
   static const String initialPage = '/';
   static const String homePage = '/homePage';
   static const String splashScreen = '/splashScreen';
+  static const String onboardingScreen = '/onboardingScreen';
 
   static List<GetPage> getPages() {
     return <GetPage>[
       GetPage(
-        name: homePage,
+        name: initialPage,
         page: () => const HomePage(),
       ),
       GetPage(
@@ -20,7 +21,7 @@ class RoutesApp {
         page: () => const SplashScreen(),
       ),
       GetPage(
-        name: initialPage,
+        name: onboardingScreen,
         page: () => const OnboardingScreen(),
         binding: OnboardingScreenBinding(),
       ),
