@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
             children: const [
               CardRestaurantWidget(),
               CardRestaurantOfferWidget(offerText: '30% Off'),
-              CardRestaurantOfferWidget(offerText: 'day % night'),
+              CardRestaurantOfferWidget(offerText: 'day & night'),
             ],
           ),
         ),
