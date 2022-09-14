@@ -6,6 +6,8 @@ class ImagesApp {
       '${_imagePath}backgroundSplash.png';
 
   static const String imageFood1Path = '${_imagePath}food1.png';
+  static const String imageFood2Path = '${_imagePath}food2.jpg';
+  static const String imageNotFoundPath = '${_imagePath}notFoundFood.png';
 
   static const String wholeLogoPath = '${_svgPath}white_whole_logo.svg';
   static const String logoPath = '${_svgPath}whole_logo.svg';
