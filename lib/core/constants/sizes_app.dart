@@ -15,6 +15,8 @@ class SizesApp {
   static final double r4 = 4.r;
   static final double r24 = 24.r;
   static final double r30 = 30.r;
+  static final double r210 = 210.r;
+  static final double r140 = 140.r;
 
   static const double doubleInfinity = double.infinity;
 

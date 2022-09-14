@@ -11,6 +11,7 @@ class ColorsApp {
   static Color transparent = Colors.transparent;
   static Color grey = const Color(0xFF899597);
   static Color greyLight = const Color(0xFFCCCCCC);
+  static Color whiteSuger = const Color(0xFFFAFAFA);
   static Color black = Colors.black87;
   static Color white = Colors.white;
 }
