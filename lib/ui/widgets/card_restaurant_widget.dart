@@ -151,12 +151,15 @@ class CardRestaurantWidget extends StatelessWidget {
                                     child: Padding(
                                       padding: EdgeInsets.all(SizesApp.r2),
                                       child: Row(
-                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisSize: MainAxisSize.min,
                                         mainAxisAlignment:
                                             MainAxisAlignment.end,
                                         crossAxisAlignment:
                                             CrossAxisAlignment.center,
                                         children: [
+                                          SizedBox(
+                                            width: SizesApp.r10,
+                                          ),
                                           Text(
                                             '30%',
                                             style: StylesApp.caption.copyWith(
