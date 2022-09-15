@@ -10,7 +10,7 @@ class ThemesApp {
     appBarTheme: AppBarTheme(
       backgroundColor: ColorsApp.white,
       titleTextStyle: StylesApp.headline6.copyWith(
-        color: ColorsApp.black,
+        color: ColorsApp.black87,
         fontWeight: FontWeight.w600,
       ),
       iconTheme: IconThemeData(
@@ -23,7 +23,7 @@ class ThemesApp {
   );
   static ThemeData dark = ThemeData(
     brightness: Brightness.dark,
-    scaffoldBackgroundColor: ColorsApp.black,
+    scaffoldBackgroundColor: ColorsApp.black87,
     primarySwatch: Colors.amber,
     appBarTheme: AppBarTheme(
       color: ColorsApp.white,

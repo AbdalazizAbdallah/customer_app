@@ -39,12 +39,12 @@ class CardRestaurantOfferWidget extends StatelessWidget {
                             end: Alignment.bottomCenter,
                             begin: Alignment.topCenter,
                             colors: [
-                              ColorsApp.black,
-                              ColorsApp.black.withOpacity(0.55),
+                              ColorsApp.black87,
+                              ColorsApp.black87.withOpacity(0.55),
                               ColorsApp.transparent,
                               ColorsApp.transparent,
-                              ColorsApp.black.withOpacity(0.55),
-                              ColorsApp.black,
+                              ColorsApp.black87.withOpacity(0.55),
+                              ColorsApp.black87,
                             ],
                           ),
                         ),
@@ -92,7 +92,7 @@ class CardRestaurantOfferWidget extends StatelessWidget {
                                 const Spacer(),
                                 Container(
                                   decoration: BoxDecoration(
-                                    color: ColorsApp.black.withOpacity(0.36),
+                                    color: ColorsApp.black87.withOpacity(0.36),
                                     border: Border.all(
                                       color: ColorsApp.white,
                                       width: 2,
@@ -197,7 +197,7 @@ class CardRestaurantOfferWidget extends StatelessWidget {
                         Text(
                           'No minimum',
                           style: StylesApp.captionDin.copyWith(
-                            color: ColorsApp.black.withOpacity(0.5),
+                            color: ColorsApp.black87.withOpacity(0.5),
                           ),
                         ),
                         const Spacer(),

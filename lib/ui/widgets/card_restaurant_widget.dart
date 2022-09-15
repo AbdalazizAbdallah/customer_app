@@ -45,12 +45,12 @@ class CardRestaurantWidget extends StatelessWidget {
                             end: Alignment.bottomCenter,
                             begin: Alignment.topCenter,
                             colors: [
-                              ColorsApp.black,
-                              ColorsApp.black.withOpacity(0.55),
+                              ColorsApp.black87,
+                              ColorsApp.black87.withOpacity(0.55),
                               ColorsApp.transparent,
                               ColorsApp.transparent,
-                              ColorsApp.black.withOpacity(0.55),
-                              ColorsApp.black,
+                              ColorsApp.black87.withOpacity(0.55),
+                              ColorsApp.black87,
                             ],
                           ),
                         ),
@@ -148,13 +148,14 @@ class CardRestaurantWidget extends StatelessWidget {
                                 children: [
                                   Container(
                                     decoration: BoxDecoration(
-                                      color: ColorsApp.black.withOpacity(0.36),
+                                      color:
+                                          ColorsApp.black87.withOpacity(0.36),
                                       border: Border.all(
                                         color: ColorsApp.white,
                                         width: 2,
                                       ),
                                       borderRadius:
-                                      BorderRadius.circular(SizesApp.r16),
+                                          BorderRadius.circular(SizesApp.r16),
                                     ),
                                     child: Padding(
                                       padding: EdgeInsets.all(SizesApp.r2),
@@ -186,21 +187,21 @@ class CardRestaurantWidget extends StatelessWidget {
                                   CircleAvatar(
                                     radius: SizesApp.r12,
                                     backgroundColor:
-                                    ColorsApp.black.withOpacity(0.37),
+                                        ColorsApp.black87.withOpacity(0.37),
                                     child: SvgPicture.asset(
                                         ImagesApp.pickupTypePath),
                                   ),
                                   CircleAvatar(
                                     radius: SizesApp.r12,
                                     backgroundColor:
-                                    ColorsApp.black.withOpacity(0.37),
+                                        ColorsApp.black87.withOpacity(0.37),
                                     child: SvgPicture.asset(
                                         ImagesApp.deliveryTypePath),
                                   ),
                                   CircleAvatar(
                                     radius: SizesApp.r12,
                                     backgroundColor:
-                                    ColorsApp.black.withOpacity(0.37),
+                                        ColorsApp.black87.withOpacity(0.37),
                                     child: SvgPicture.asset(
                                         ImagesApp.tablesTypePath),
                                   )
@@ -249,7 +250,7 @@ class CardRestaurantWidget extends StatelessWidget {
                         Text(
                           'No minimum',
                           style: StylesApp.captionDin.copyWith(
-                              color: ColorsApp.black.withOpacity(0.5)),
+                              color: ColorsApp.black87.withOpacity(0.5)),
                         ),
                         const Spacer(),
                         Column(

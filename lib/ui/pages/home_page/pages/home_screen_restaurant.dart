@@ -1,3 +1,4 @@
+import 'package:badges/badges.dart';
 import 'package:customer_app/core/constants/colors_app.dart';
 import 'package:customer_app/core/constants/images_app.dart';
 import 'package:customer_app/core/constants/sizes_app.dart';
@@ -5,6 +6,8 @@ import 'package:customer_app/core/constants/styles_app.dart';
 import 'package:customer_app/ui/pages/home_page/controller/home_page_controller.dart';
 import 'package:customer_app/ui/widgets/card_restaurant_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_expandable_fab/flutter_expandable_fab.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -25,7 +28,21 @@ class HomeScreenRestaurant extends GetView<HomeScreenController> {
             const Spacer(),
             IconButton(
               onPressed: () {},
-              icon: const Icon(Icons.notifications_sharp),
+              icon: Badge(
+                badgeContent: Text(
+                  '9',
+                  style: TextStyle(
+                    color: ColorsApp.white,
+                    fontSize: 8,
+                  ),
+                ),
+                position: const BadgePosition(
+                  top: -10,
+                  end: -10,
+                ),
+                badgeColor: ColorsApp.warning,
+                child: const Icon(Icons.notifications_sharp),
+              ),
             ),
           ],
         ),
@@ -54,7 +71,7 @@ class HomeScreenRestaurant extends GetView<HomeScreenController> {
             Text(
               'top_rating'.tr,
               style: StylesApp.subtitle1.copyWith(
-                color: ColorsApp.black,
+                color: ColorsApp.black87,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -109,7 +126,7 @@ class HomeScreenRestaurant extends GetView<HomeScreenController> {
             Text(
               'all_restaurant'.tr,
               style: StylesApp.subtitle1.copyWith(
-                color: ColorsApp.black,
+                color: ColorsApp.black87,
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -137,6 +154,65 @@ class HomeScreenRestaurant extends GetView<HomeScreenController> {
             ),
           ],
         ),
+      ),
+      floatingActionButtonLocation: ExpandableFab.location,
+      floatingActionButton: ExpandableFab(
+        child: Icon(
+          Icons.home,
+          color: ColorsApp.white,
+        ),
+        type: ExpandableFabType.up,
+        distance: 60,
+        children: [
+          Directionality(
+            textDirection: TextDirection.rtl,
+            child: FloatingActionButton.extended(
+              label: Text(
+                'offer'.tr,
+                style: StylesApp.subtitle2.copyWith(
+                  color: ColorsApp.white,
+                ),
+              ),
+              icon: SvgPicture.asset(ImagesApp.discountPath),
+              backgroundColor: ColorsApp.warning,
+              onPressed: () {},
+            ),
+          ),
+          Directionality(
+            textDirection: TextDirection.rtl,
+            child: FloatingActionButton.extended(
+              label: Text(
+                'grocery'.tr,
+                style: StylesApp.subtitle2.copyWith(
+                  color: ColorsApp.white,
+                ),
+              ),
+              icon: Icon(
+                Icons.storefront_sharp,
+                color: ColorsApp.white,
+              ),
+              backgroundColor: ColorsApp.info,
+              onPressed: () {},
+            ),
+          ),
+          Directionality(
+            textDirection: TextDirection.rtl,
+            child: FloatingActionButton.extended(
+              label: Text(
+                'filter'.tr,
+                style: StylesApp.subtitle2.copyWith(
+                  color: ColorsApp.white,
+                ),
+              ),
+              icon: Icon(
+                Icons.filter_alt_outlined,
+                color: ColorsApp.white,
+              ),
+              backgroundColor: ColorsApp.black,
+              onPressed: () {},
+            ),
+          ),
+        ],
       ),
     );
   }
