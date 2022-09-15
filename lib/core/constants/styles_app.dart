@@ -21,6 +21,11 @@ class StylesApp {
     fontSize: SizesApp.sp16,
   );
 
+  /// [subtitle1] ==> 16.sp openSans font
+  static final TextStyle subtitle1 = GoogleFonts.openSans(
+    fontSize: SizesApp.sp16,
+  );
+
   /// [subtitle2] ==> 14.sp openSans font
   static final TextStyle subtitle2 = GoogleFonts.openSans(
     fontSize: SizesApp.sp14,

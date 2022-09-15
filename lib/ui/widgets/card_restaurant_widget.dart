@@ -8,7 +8,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CardRestaurantWidget extends StatelessWidget {
-  const CardRestaurantWidget({Key? key}) : super(key: key);
+  const CardRestaurantWidget({
+    Key? key,
+    required this.restaurantName,
+    required this.pathImage,
+  }) : super(key: key);
+
+  final String restaurantName;
+  final String pathImage;
 
   @override
   Widget build(BuildContext context) {
@@ -16,15 +23,16 @@ class CardRestaurantWidget extends StatelessWidget {
       width: SizesApp.r330,
       height: SizesApp.r200,
       child: Card(
+        elevation: 3,
         clipBehavior: Clip.hardEdge,
         child: Column(
           children: [
             Flexible(
               flex: 5,
               child: Container(
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage(ImagesApp.imageFood1Path),
+                    image: AssetImage(pathImage),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -96,7 +104,7 @@ class CardRestaurantWidget extends StatelessWidget {
                                   ),
                                   const Spacer(),
                                   Text(
-                                    'Shampyon',
+                                    restaurantName,
                                     style: StylesApp.headline5.copyWith(
                                       fontWeight: FontWeight.bold,
                                       color: ColorsApp.white,
@@ -135,7 +143,7 @@ class CardRestaurantWidget extends StatelessWidget {
                             child: SizedBox.expand(
                               child: Column(
                                 mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
+                                MainAxisAlignment.spaceEvenly,
                                 crossAxisAlignment: CrossAxisAlignment.end,
                                 children: [
                                   Container(
@@ -146,16 +154,16 @@ class CardRestaurantWidget extends StatelessWidget {
                                         width: 2,
                                       ),
                                       borderRadius:
-                                          BorderRadius.circular(SizesApp.r16),
+                                      BorderRadius.circular(SizesApp.r16),
                                     ),
                                     child: Padding(
                                       padding: EdgeInsets.all(SizesApp.r2),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.min,
                                         mainAxisAlignment:
-                                            MainAxisAlignment.end,
+                                        MainAxisAlignment.end,
                                         crossAxisAlignment:
-                                            CrossAxisAlignment.center,
+                                        CrossAxisAlignment.center,
                                         children: [
                                           SizedBox(
                                             width: SizesApp.r10,
@@ -178,21 +186,21 @@ class CardRestaurantWidget extends StatelessWidget {
                                   CircleAvatar(
                                     radius: SizesApp.r12,
                                     backgroundColor:
-                                        ColorsApp.black.withOpacity(0.37),
+                                    ColorsApp.black.withOpacity(0.37),
                                     child: SvgPicture.asset(
                                         ImagesApp.pickupTypePath),
                                   ),
                                   CircleAvatar(
                                     radius: SizesApp.r12,
                                     backgroundColor:
-                                        ColorsApp.black.withOpacity(0.37),
+                                    ColorsApp.black.withOpacity(0.37),
                                     child: SvgPicture.asset(
                                         ImagesApp.deliveryTypePath),
                                   ),
                                   CircleAvatar(
                                     radius: SizesApp.r12,
                                     backgroundColor:
-                                        ColorsApp.black.withOpacity(0.37),
+                                    ColorsApp.black.withOpacity(0.37),
                                     child: SvgPicture.asset(
                                         ImagesApp.tablesTypePath),
                                   )
