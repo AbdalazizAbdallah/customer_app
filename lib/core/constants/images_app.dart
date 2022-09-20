@@ -19,6 +19,10 @@ class ImagesApp {
   static const String deliveryTypePath = '${_svgPath}deliveryType.svg';
   static const String pickupTypePath = '${_svgPath}pickupType.svg';
 
+  static const String deliveryTimeTypePath = '${_svgPath}delivery_time.svg';
+  static const String deliverFreeTypePath = '${_svgPath}delivery_free.svg';
+  static const String lowestPath = '${_svgPath}lowest_price.svg';
+
   static const String imageOnboardingPath =
       '${_svgPath}backgroundOnboarding.svg';
   static const String imageOnboarding2Path =

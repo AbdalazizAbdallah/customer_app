@@ -3,6 +3,7 @@ import 'package:customer_app/core/constants/colors_app.dart';
 import 'package:customer_app/core/constants/images_app.dart';
 import 'package:customer_app/core/constants/sizes_app.dart';
 import 'package:customer_app/core/constants/styles_app.dart';
+import 'package:customer_app/core/routes/routes_app.dart';
 import 'package:customer_app/ui/pages/home_page/controller/home_page_controller.dart';
 import 'package:customer_app/ui/widgets/card_restaurant_widget.dart';
 import 'package:flutter/material.dart';
@@ -48,18 +49,22 @@ class HomeScreenRestaurant extends GetView<HomeScreenController> {
         ),
         leadingWidth: SizesApp.r105,
         actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.location_on,
-            ),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.search,
-            ),
-          ),
+          Row(
+            children: [
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.location_on,
+                ),
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.search,
+                ),
+              ),
+            ],
+          )
         ],
       ),
       body: Padding(
@@ -167,6 +172,7 @@ class HomeScreenRestaurant extends GetView<HomeScreenController> {
           Directionality(
             textDirection: TextDirection.rtl,
             child: FloatingActionButton.extended(
+              heroTag: 'offer',
               label: Text(
                 'offer'.tr,
                 style: StylesApp.subtitle2.copyWith(
@@ -181,6 +187,7 @@ class HomeScreenRestaurant extends GetView<HomeScreenController> {
           Directionality(
             textDirection: TextDirection.rtl,
             child: FloatingActionButton.extended(
+              heroTag: 'grocery',
               label: Text(
                 'grocery'.tr,
                 style: StylesApp.subtitle2.copyWith(
@@ -198,6 +205,7 @@ class HomeScreenRestaurant extends GetView<HomeScreenController> {
           Directionality(
             textDirection: TextDirection.rtl,
             child: FloatingActionButton.extended(
+              heroTag: 'filter',
               label: Text(
                 'filter'.tr,
                 style: StylesApp.subtitle2.copyWith(
@@ -209,7 +217,9 @@ class HomeScreenRestaurant extends GetView<HomeScreenController> {
                 color: ColorsApp.white,
               ),
               backgroundColor: ColorsApp.black,
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed(RoutesApp.filterScreen);
+              },
             ),
           ),
         ],

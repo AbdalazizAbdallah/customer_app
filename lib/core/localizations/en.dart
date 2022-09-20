@@ -5,4 +5,10 @@ Map<String, String> enUs = {
   'filter': 'Filter',
   'offer': 'Offer',
   'grocery': 'Grocery',
+  'sort': 'Sort',
+  'lowest_prices': 'Lowest Prices',
+  'delivery_free': 'Delivery free',
+  'delivery_time': 'Delivery Time',
+  'rating': 'Rating',
+  'popular_filters': 'Popular filters',
 };

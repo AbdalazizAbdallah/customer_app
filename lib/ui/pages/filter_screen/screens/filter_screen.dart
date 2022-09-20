@@ -1,0 +1,122 @@
+import 'dart:math' as math; // import this
+
+import 'package:customer_app/core/constants/colors_app.dart';
+import 'package:customer_app/core/constants/images_app.dart';
+import 'package:customer_app/core/constants/sizes_app.dart';
+import 'package:customer_app/core/constants/styles_app.dart';
+import 'package:customer_app/ui/pages/filter_screen/contollers/filter_type_contollers.dart';
+import 'package:customer_app/ui/pages/filter_screen/widgets/filter_type_widget.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+
+import '../../../widgets/app_bar_widget.dart';
+
+class FilterScreen extends StatelessWidget {
+  const FilterScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: getAppBar(title: 'filter'.tr),
+      body: Padding(
+        padding: EdgeInsets.all(SizesApp.r16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'sort'.tr,
+              style: StylesApp.headline7.copyWith(
+                color: ColorsApp.black,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(
+              height: 130.r,
+              child: GetBuilder<FilterTypeController>(
+                init: FilterTypeController(),
+                id: 'filter_type',
+                assignId: true,
+                builder: (filterTypeController) {
+                  return ListView.builder(
+                    itemCount: filterTypeController.namesFilter.length,
+                    itemBuilder: (context, index) {
+                      return FilterTypeWidget(
+                        titleType: filterTypeController.namesFilter[index],
+                        colorText: filterTypeController.selectedFilter[index]
+                            ? ColorsApp.primary
+                            : ColorsApp.greyLight,
+                        visiable: filterTypeController.selectedFilter[index],
+                        widget: getWidget(index),
+                        onTap: () {
+                          filterTypeController.setSelectedFilter(index);
+                        },
+                      );
+                    },
+                    scrollDirection: Axis.horizontal,
+                  );
+                },
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: SizesApp.r30),
+              child: Row(
+                children: [
+                  Flexible(
+                    flex: 1,
+                    child: Text(
+                      'Hide restaurants that do their own delivery',
+                      style: StylesApp.body1.copyWith(
+                        color: ColorsApp.blackLight,
+                      ),
+                    ),
+                  ),
+                  GetBuilder<FilterTypeController>(
+                    id: 'filter_switch',
+                    assignId: true,
+                    builder: (filterTypeController) {
+                      return Switch(
+                        value: filterTypeController.statusSwitch,
+                        onChanged: (value) {
+                          filterTypeController.setSwitchValueForFilter();
+                        },
+                      );
+                    },
+                  )
+                ],
+              ),
+            ),
+            Text(
+              'popular_filters'.tr,
+              style: StylesApp.headline7.copyWith(
+                color: ColorsApp.black,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+Widget getWidget(int index) {
+  switch (index) {
+    case 0:
+      return Transform(
+        alignment: Alignment.center,
+        transform: Matrix4.rotationY(math.pi),
+        child: Icon(
+          Icons.thumb_up_alt_outlined,
+          color: ColorsApp.primary,
+        ),
+      );
+    case 1:
+      return SvgPicture.asset(ImagesApp.deliveryTimeTypePath);
+    case 2:
+      return SvgPicture.asset(ImagesApp.deliverFreeTypePath);
+    default:
+      return SvgPicture.asset(ImagesApp.lowestPath);
+  }
+}
