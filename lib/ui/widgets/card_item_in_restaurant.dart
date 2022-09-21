@@ -42,8 +42,8 @@ class CardItemInRestaurant extends StatelessWidget {
                   end: Alignment.bottomCenter,
                   colors: [
                     ColorsApp.transparent,
-                    ColorsApp.black.withOpacity(0.88),
-                    ColorsApp.black,
+                    ColorsApp.black87.withOpacity(0.88),
+                    ColorsApp.black87,
                   ],
                 ),
               ),

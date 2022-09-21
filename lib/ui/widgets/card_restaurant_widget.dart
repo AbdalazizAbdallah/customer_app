@@ -8,7 +8,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CardRestaurantWidget extends StatelessWidget {
-  const CardRestaurantWidget({Key? key}) : super(key: key);
+  const CardRestaurantWidget({
+    Key? key,
+    required this.restaurantName,
+    required this.pathImage,
+  }) : super(key: key);
+
+  final String restaurantName;
+  final String pathImage;
 
   @override
   Widget build(BuildContext context) {
@@ -16,15 +23,16 @@ class CardRestaurantWidget extends StatelessWidget {
       width: SizesApp.r330,
       height: SizesApp.r200,
       child: Card(
+        elevation: 3,
         clipBehavior: Clip.hardEdge,
         child: Column(
           children: [
             Flexible(
               flex: 5,
               child: Container(
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage(ImagesApp.imageFood1Path),
+                    image: AssetImage(pathImage),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -37,12 +45,12 @@ class CardRestaurantWidget extends StatelessWidget {
                             end: Alignment.bottomCenter,
                             begin: Alignment.topCenter,
                             colors: [
-                              ColorsApp.black,
-                              ColorsApp.black.withOpacity(0.55),
+                              ColorsApp.black87,
+                              ColorsApp.black87.withOpacity(0.55),
                               ColorsApp.transparent,
                               ColorsApp.transparent,
-                              ColorsApp.black.withOpacity(0.55),
-                              ColorsApp.black,
+                              ColorsApp.black87.withOpacity(0.55),
+                              ColorsApp.black87,
                             ],
                           ),
                         ),
@@ -96,7 +104,7 @@ class CardRestaurantWidget extends StatelessWidget {
                                   ),
                                   const Spacer(),
                                   Text(
-                                    'Shampyon',
+                                    restaurantName,
                                     style: StylesApp.headline5.copyWith(
                                       fontWeight: FontWeight.bold,
                                       color: ColorsApp.white,
@@ -135,12 +143,13 @@ class CardRestaurantWidget extends StatelessWidget {
                             child: SizedBox.expand(
                               child: Column(
                                 mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
+                                MainAxisAlignment.spaceEvenly,
                                 crossAxisAlignment: CrossAxisAlignment.end,
                                 children: [
                                   Container(
                                     decoration: BoxDecoration(
-                                      color: ColorsApp.black.withOpacity(0.36),
+                                      color:
+                                          ColorsApp.black87.withOpacity(0.36),
                                       border: Border.all(
                                         color: ColorsApp.white,
                                         width: 2,
@@ -153,9 +162,9 @@ class CardRestaurantWidget extends StatelessWidget {
                                       child: Row(
                                         mainAxisSize: MainAxisSize.min,
                                         mainAxisAlignment:
-                                            MainAxisAlignment.end,
+                                        MainAxisAlignment.end,
                                         crossAxisAlignment:
-                                            CrossAxisAlignment.center,
+                                        CrossAxisAlignment.center,
                                         children: [
                                           SizedBox(
                                             width: SizesApp.r10,
@@ -178,21 +187,21 @@ class CardRestaurantWidget extends StatelessWidget {
                                   CircleAvatar(
                                     radius: SizesApp.r12,
                                     backgroundColor:
-                                        ColorsApp.black.withOpacity(0.37),
+                                        ColorsApp.black87.withOpacity(0.37),
                                     child: SvgPicture.asset(
                                         ImagesApp.pickupTypePath),
                                   ),
                                   CircleAvatar(
                                     radius: SizesApp.r12,
                                     backgroundColor:
-                                        ColorsApp.black.withOpacity(0.37),
+                                        ColorsApp.black87.withOpacity(0.37),
                                     child: SvgPicture.asset(
                                         ImagesApp.deliveryTypePath),
                                   ),
                                   CircleAvatar(
                                     radius: SizesApp.r12,
                                     backgroundColor:
-                                        ColorsApp.black.withOpacity(0.37),
+                                        ColorsApp.black87.withOpacity(0.37),
                                     child: SvgPicture.asset(
                                         ImagesApp.tablesTypePath),
                                   )
@@ -241,7 +250,7 @@ class CardRestaurantWidget extends StatelessWidget {
                         Text(
                           'No minimum',
                           style: StylesApp.captionDin.copyWith(
-                              color: ColorsApp.black.withOpacity(0.5)),
+                              color: ColorsApp.black87.withOpacity(0.5)),
                         ),
                         const Spacer(),
                         Column(

@@ -7,6 +7,8 @@ class ImagesApp {
 
   static const String imageFood1Path = '${_imagePath}food1.png';
   static const String imageFood2Path = '${_imagePath}food2.jpg';
+  static const String imageFood3Path = '${_imagePath}food3.png';
+  static const String imageFood4Path = '${_imagePath}food4.png';
   static const String imageNotFoundPath = '${_imagePath}notFoundFood.png';
 
   static const String wholeLogoPath = '${_svgPath}white_whole_logo.svg';
@@ -16,6 +18,10 @@ class ImagesApp {
   static const String tablesTypePath = '${_svgPath}tablesType.svg';
   static const String deliveryTypePath = '${_svgPath}deliveryType.svg';
   static const String pickupTypePath = '${_svgPath}pickupType.svg';
+
+  static const String deliveryTimeTypePath = '${_svgPath}delivery_time.svg';
+  static const String deliverFreeTypePath = '${_svgPath}delivery_free.svg';
+  static const String lowestPath = '${_svgPath}lowest_price.svg';
 
   static const String imageOnboardingPath =
       '${_svgPath}backgroundOnboarding.svg';
