@@ -1,40 +1,55 @@
 import 'package:get/get.dart';
 
-enum FilterTypeEnum {
+enum FilterSortTypesEnum {
   rating,
   deliveryTime,
   deliveryFree,
   lowestPrices,
 }
 
-class FilterTypeController extends GetxController {
-  List<String> namesFilter = [
+class FilterScreenTypesController extends GetxController {
+  List<String> sortFilterNames = [
     'rating'.tr,
     'delivery_time'.tr,
     'delivery_free'.tr,
     'lowest_prices'.tr,
   ];
-
-  late String selectedFilterName;
-
-  late List<bool> selectedFilter;
+  late List<bool> sortFilterNamesSelected;
 
   bool statusSwitch = false;
 
-  FilterTypeController() {
-    selectedFilterName = namesFilter[0];
-    selectedFilter = List.generate(4, (index) => index != 0 ? false : true);
+  List<String> popularFilterStrings = [
+    'Burritos',
+    'Noodles',
+    'Pizza',
+    'Burgers',
+    'Chicken',
+  ];
+  List<String> popularFilterSelected = [];
+
+  FilterScreenTypesController() {
+    sortFilterNamesSelected =
+        List.generate(4, (index) => index != 0 ? false : true);
   }
 
   void setSelectedFilter(int indexSelected) {
-    selectedFilter =
+    sortFilterNamesSelected =
         List.generate(4, (index) => index != indexSelected ? false : true);
-    selectedFilterName = FilterTypeEnum.values[indexSelected].name;
     update(['filter_type']);
   }
 
   void setSwitchValueForFilter() {
     statusSwitch = !statusSwitch;
     update(['filter_switch']);
+  }
+
+  void setValueChip(bool value, String stringSelected) {
+    if (value) {
+      popularFilterSelected.add(stringSelected);
+    } else {
+      popularFilterSelected.removeWhere((element) => element == stringSelected);
+    }
+    print(popularFilterSelected.join(','));
+    update(['chip_value']);
   }
 }
