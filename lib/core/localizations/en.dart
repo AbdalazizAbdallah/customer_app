@@ -11,4 +11,5 @@ Map<String, String> enUs = {
   'delivery_time': 'Delivery Time',
   'rating': 'Rating',
   'popular_filters': 'Popular filters',
+  'provides_service': 'Provides a service',
 };

@@ -11,4 +11,5 @@ Map<String, String> arEg = {
   'delivery_time': 'ديليفري وقت',
   'rating': 'تقييم',
   'popular_filters': 'التصفيات الشائعة',
+  'provides_service': 'الخدمات الموفرة',
 };

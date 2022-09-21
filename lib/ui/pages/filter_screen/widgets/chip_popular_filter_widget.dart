@@ -19,7 +19,8 @@ class ChipPopularFilterWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsetsDirectional.only(end: SizesApp.r16, top: SizesApp.r16),
-      child: ChoiceChip(
+      child: FilterChip(
+        showCheckmark: false,
         label: Text(
           stringFilter,
           style: StylesApp.body1.copyWith(
