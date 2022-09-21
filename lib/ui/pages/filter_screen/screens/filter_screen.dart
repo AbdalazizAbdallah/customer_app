@@ -8,6 +8,7 @@ import 'package:customer_app/ui/pages/filter_screen/contollers/filter_type_conto
 import 'package:customer_app/ui/pages/filter_screen/widgets/chip_popular_filter_widget.dart';
 import 'package:customer_app/ui/pages/filter_screen/widgets/filter_type_widget.dart';
 import 'package:customer_app/ui/pages/filter_screen/widgets/provide_service_filter_widget.dart';
+import 'package:customer_app/ui/widgets/custom_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -133,35 +134,44 @@ class FilterScreen extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Row(
-                children: [
-                  Wrap(
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.all(SizesApp.r16),
-                        child: const ProvideServiceFilterWidget(
-                          imagePath: ImagesApp.deliveryTypePath,
-                          selected: false,
-                        ),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: SizesApp.r16),
+                child: Wrap(
+                  children: [
+                    Padding(
+                      padding: EdgeInsetsDirectional.only(end: SizesApp.r16),
+                      child: const ProvideServiceFilterWidget(
+                        imagePath: ImagesApp.tablesTypePath,
+                        selected: false,
                       ),
-                      Padding(
-                        padding: EdgeInsets.all(SizesApp.r16),
-                        child: const ProvideServiceFilterWidget(
-                          imagePath: ImagesApp.pickupTypePath,
-                          selected: true,
-                        ),
+                    ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.only(end: SizesApp.r16),
+                      child: const ProvideServiceFilterWidget(
+                        imagePath: ImagesApp.deliveryTypePath,
+                        selected: false,
                       ),
-                      Padding(
-                        padding: EdgeInsets.all(SizesApp.r16),
-                        child: const ProvideServiceFilterWidget(
-                          imagePath: ImagesApp.tablesTypePath,
-                          selected: false,
-                        ),
+                    ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.only(end: SizesApp.r16),
+                      child: const ProvideServiceFilterWidget(
+                        imagePath: ImagesApp.pickupTypePath,
+                        selected: true,
                       ),
-                    ],
-                  ),
-                ],
-              )
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: SizesApp.r48,
+                  vertical: SizesApp.r10,
+                ),
+                child: CustomButtonWidget(
+                  title: 'done'.tr,
+                  onPressed: () {},
+                ),
+              ),
             ],
           ),
         ),

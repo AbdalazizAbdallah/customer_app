@@ -12,4 +12,5 @@ Map<String, String> arEg = {
   'rating': 'تقييم',
   'popular_filters': 'التصفيات الشائعة',
   'provides_service': 'الخدمات الموفرة',
+  'done': 'تم',
 };
