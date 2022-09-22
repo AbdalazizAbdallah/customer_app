@@ -10,6 +10,7 @@ class ColorsApp {
 
   static Color grey = const Color(0xFF899597);
   static Color greyLight = const Color(0xFFCCCCCC);
+  static Color greyTooLight = const Color(0xFFF4F4F6);
   static Color whiteSuger = const Color(0xFFFAFAFA);
   static Color blackLight = const Color(0xFF2A2A2A);
 

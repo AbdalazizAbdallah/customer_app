@@ -1,6 +1,6 @@
 import 'package:customer_app/core/constants/strings_app.dart';
 import 'package:customer_app/core/constants/themes_app.dart';
-import 'package:customer_app/core/routes/routes_app.dart';
+import 'package:customer_app/features/auth/presentation/pages/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -32,8 +32,9 @@ class MyApp extends StatelessWidget {
           fallbackLocale: const Locale('en', 'US'),
           darkTheme: ThemesApp.dark,
           themeMode: ThemeMode.light,
-          initialRoute: RoutesApp.initialPage,
-          getPages: RoutesApp.getPages(),
+          home: LoginPage(),
+          // initialRoute: RoutesApp.initialPage,
+          // getPages: RoutesApp.getPages(),
         );
       },
     );
