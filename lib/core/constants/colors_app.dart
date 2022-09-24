@@ -17,6 +17,9 @@ class ColorsApp {
   static Color primaryRightGradient = const Color(0xFF1FAAC4);
   static Color primaryLeftGradient = const Color(0xFF54E4D2);
 
+  static Color twitterColor = const Color(0xFF1DA1F2);
+  static Color facebookColor = const Color(0xFF334D92);
+
   static Color transparent = Colors.transparent;
   static Color black87 = Colors.black87;
   static Color black = Colors.black;

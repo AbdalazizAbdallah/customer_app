@@ -2,6 +2,7 @@ import 'package:customer_app/core/constants/colors_app.dart';
 import 'package:customer_app/core/constants/sizes_app.dart';
 import 'package:customer_app/core/constants/styles_app.dart';
 import 'package:customer_app/core/widgets/custom_button_widget.dart';
+import 'package:customer_app/core/widgets/dialog_wait.dart';
 import 'package:customer_app/features/auth/presentation/controllers/custom_text_field_password_controller.dart';
 import 'package:customer_app/features/auth/presentation/widgets/custom_text_field_password.dart';
 import 'package:customer_app/features/auth/presentation/widgets/custom_text_field_widget.dart';
@@ -9,6 +10,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     Get.create(
@@ -23,7 +26,7 @@ class LoginPage extends StatelessWidget {
           children: [
             CustomTextFieldWidget(
               controllerTextField: TextEditingController(),
-              hintText: 'username',
+              hintText: 'email'.tr,
               prefixIcon: Icons.person,
               myKeyboardType: TextInputType.name,
             ),
@@ -32,7 +35,7 @@ class LoginPage extends StatelessWidget {
             ),
             CustomTextFieldPassword(
               controllerTextField: TextEditingController(),
-              hintText: 'password',
+              hintText: 'password'.tr,
             ),
             SizedBox(
               height: SizesApp.r10,
@@ -40,13 +43,13 @@ class LoginPage extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  'For Get your password ? ',
+                  'for_get_password'.tr,
                   style: StylesApp.subtitle2,
                 ),
                 InkWell(
                   onTap: () {},
                   child: Text(
-                    'click here',
+                    'click_here'.tr,
                     style: StylesApp.subtitle2.copyWith(
                       color: ColorsApp.primary,
                     ),
@@ -57,7 +60,7 @@ class LoginPage extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  'Remember Me ',
+                  'remember_me'.tr,
                   style: StylesApp.subtitle2,
                 ),
                 Checkbox(
@@ -71,31 +74,10 @@ class LoginPage extends StatelessWidget {
               height: SizesApp.r30,
             ),
             CustomButtonWidget(
-              title: 'Login',
+              title: 'login'.tr,
               onPressed: () {
                 Get.dialog(
-                  Scaffold(
-                    backgroundColor: Colors.transparent,
-                    body: Center(
-                      child: Card(
-                        color: ColorsApp.white,
-                        child: Padding(
-                          padding: EdgeInsets.all(SizesApp.r10),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              CircularProgressIndicator(),
-                              SizedBox(
-                                width: SizesApp.r10,
-                              ),
-                              Text('waiting ...'),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                  const DialogWait(),
                 );
               },
             ),
@@ -103,11 +85,11 @@ class LoginPage extends StatelessWidget {
               height: SizesApp.r30,
             ),
             Text(
-              'login by',
+              'login_by'.tr,
               style: StylesApp.subtitle2.copyWith(
                 color: ColorsApp.grey.withOpacity(0.65),
               ),
-            )
+            ),
           ],
         ),
       ),

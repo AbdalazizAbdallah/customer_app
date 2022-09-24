@@ -59,7 +59,7 @@ class CustomTextFieldPassword extends StatelessWidget {
 
 String? validateFunctionIsNotEmpty(String? value) {
   if (value != null && value.isEmpty) {
-    return 'requried'.tr;
+    return 'required'.tr;
   } else {
     return null;
   }
