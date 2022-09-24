@@ -45,6 +45,7 @@ dependencies:
   google_fonts: ^3.0.1
   flutter_expandable_fab: ^1.5.1
   badges: ^2.0.3
+  font_awesome_flutter: ^10.2.1
 
 dev_dependencies:
   flutter_test:

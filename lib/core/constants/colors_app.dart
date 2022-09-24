@@ -19,6 +19,7 @@ class ColorsApp {
 
   static Color twitterColor = const Color(0xFF1DA1F2);
   static Color facebookColor = const Color(0xFF334D92);
+  static Color googleColor = const Color(0xFFEA4335);
 
   static Color transparent = Colors.transparent;
   static Color black87 = Colors.black87;

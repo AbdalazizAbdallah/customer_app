@@ -7,6 +7,7 @@ import 'package:customer_app/features/auth/presentation/controllers/custom_text_
 import 'package:customer_app/features/auth/presentation/widgets/custom_text_field_password.dart';
 import 'package:customer_app/features/auth/presentation/widgets/custom_text_field_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
 class LoginPage extends StatelessWidget {
@@ -90,6 +91,50 @@ class LoginPage extends StatelessWidget {
                 color: ColorsApp.grey.withOpacity(0.65),
               ),
             ),
+            SizedBox(
+              height: SizesApp.r10,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Card(
+                  color: ColorsApp.googleColor,
+                  child: IconButton(
+                    icon: FaIcon(
+                      FontAwesomeIcons.google,
+                      color: ColorsApp.white,
+                    ),
+                    onPressed: () {
+                      debugPrint('google');
+                    },
+                  ),
+                ),
+                Card(
+                  color: ColorsApp.facebookColor,
+                  child: IconButton(
+                    icon: FaIcon(
+                      FontAwesomeIcons.facebookF,
+                      color: ColorsApp.white,
+                    ),
+                    onPressed: () {
+                      debugPrint('facebook');
+                    },
+                  ),
+                ),
+                Card(
+                  color: ColorsApp.twitterColor,
+                  child: IconButton(
+                    icon: FaIcon(
+                      FontAwesomeIcons.twitter,
+                      color: ColorsApp.white,
+                    ),
+                    onPressed: () {
+                      debugPrint('twitter');
+                    },
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       ),
