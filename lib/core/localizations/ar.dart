@@ -13,4 +13,5 @@ Map<String, String> arEg = {
   'popular_filters': 'التصفيات الشائعة',
   'provides_service': 'الخدمات الموفرة',
   'done': 'تم',
+  'requried': '*مطلوب',
 };
