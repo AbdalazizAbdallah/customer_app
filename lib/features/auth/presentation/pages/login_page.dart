@@ -19,128 +19,125 @@ class LoginPage extends StatelessWidget {
       () => CustomTextFieldPasswordController(),
     );
 
-    return Scaffold(
-      appBar: AppBar(title: Text('Login Page')),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: SizesApp.r40),
-        child: Column(
-          children: [
-            CustomTextFieldWidget(
-              controllerTextField: TextEditingController(),
-              hintText: 'email'.tr,
-              prefixIcon: Icons.person,
-              myKeyboardType: TextInputType.name,
-            ),
-            SizedBox(
-              height: SizesApp.r10,
-            ),
-            CustomTextFieldPassword(
-              controllerTextField: TextEditingController(),
-              hintText: 'password'.tr,
-            ),
-            SizedBox(
-              height: SizesApp.r10,
-            ),
-            Row(
-              children: [
-                Text(
-                  'for_get_password'.tr,
-                  style: StylesApp.subtitle2,
-                ),
-                InkWell(
-                  onTap: () {},
-                  child: Text(
-                    'click_here'.tr,
-                    style: StylesApp.subtitle2.copyWith(
-                      color: ColorsApp.primary,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Text(
-                  'remember_me'.tr,
-                  style: StylesApp.subtitle2,
-                ),
-                Checkbox(
-                  activeColor: ColorsApp.primary,
-                  value: true,
-                  onChanged: (value) {},
-                ),
-              ],
-            ),
-            SizedBox(
-              height: SizesApp.r30,
-            ),
-            CustomButtonWidget(
-              title: 'login'.tr,
-              onPressed: () {
-                Get.dialog(
-                  const DialogWait(),
-                );
-                // Future.delayed(
-                //   const Duration(seconds: 3),
-                //   () => Get.back(),
-                // );
-              },
-            ),
-            SizedBox(
-              height: SizesApp.r30,
-            ),
-            Text(
-              'login_by'.tr,
-              style: StylesApp.subtitle2.copyWith(
-                color: ColorsApp.grey.withOpacity(0.65),
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: SizesApp.r40),
+      child: Column(
+        children: [
+          CustomTextFieldWidget(
+            controllerTextField: TextEditingController(),
+            hintText: 'email'.tr,
+            prefixIcon: Icons.person,
+            myKeyboardType: TextInputType.name,
+          ),
+          SizedBox(
+            height: SizesApp.r10,
+          ),
+          CustomTextFieldPassword(
+            controllerTextField: TextEditingController(),
+            hintText: 'password'.tr,
+          ),
+          SizedBox(
+            height: SizesApp.r10,
+          ),
+          Row(
+            children: [
+              Text(
+                'for_get_password'.tr,
+                style: StylesApp.subtitle2,
               ),
+              InkWell(
+                onTap: () {},
+                child: Text(
+                  'click_here'.tr,
+                  style: StylesApp.subtitle2.copyWith(
+                    color: ColorsApp.primary,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Text(
+                'remember_me'.tr,
+                style: StylesApp.subtitle2,
+              ),
+              Checkbox(
+                activeColor: ColorsApp.primary,
+                value: true,
+                onChanged: (value) {},
+              ),
+            ],
+          ),
+          SizedBox(
+            height: SizesApp.r30,
+          ),
+          CustomButtonWidget(
+            title: 'login'.tr,
+            onPressed: () {
+              Get.dialog(
+                const DialogWait(),
+              );
+              Future.delayed(
+                const Duration(seconds: 3),
+                () => Get.back(),
+              );
+            },
+          ),
+          SizedBox(
+            height: SizesApp.r30,
+          ),
+          Text(
+            'login_by'.tr,
+            style: StylesApp.subtitle2.copyWith(
+              color: ColorsApp.grey.withOpacity(0.65),
             ),
-            SizedBox(
-              height: SizesApp.r10,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Card(
-                  color: ColorsApp.googleColor,
-                  child: IconButton(
-                    icon: FaIcon(
-                      FontAwesomeIcons.google,
-                      color: ColorsApp.white,
-                    ),
-                    onPressed: () {
-                      debugPrint('google');
-                    },
+          ),
+          SizedBox(
+            height: SizesApp.r10,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Card(
+                color: ColorsApp.googleColor,
+                child: IconButton(
+                  icon: FaIcon(
+                    FontAwesomeIcons.google,
+                    color: ColorsApp.white,
                   ),
+                  onPressed: () {
+                    debugPrint('google');
+                  },
                 ),
-                Card(
-                  color: ColorsApp.facebookColor,
-                  child: IconButton(
-                    icon: FaIcon(
-                      FontAwesomeIcons.facebookF,
-                      color: ColorsApp.white,
-                    ),
-                    onPressed: () {
-                      debugPrint('facebook');
-                    },
+              ),
+              Card(
+                color: ColorsApp.facebookColor,
+                child: IconButton(
+                  icon: FaIcon(
+                    FontAwesomeIcons.facebookF,
+                    color: ColorsApp.white,
                   ),
+                  onPressed: () {
+                    debugPrint('facebook');
+                  },
                 ),
-                Card(
-                  color: ColorsApp.twitterColor,
-                  child: IconButton(
-                    icon: FaIcon(
-                      FontAwesomeIcons.twitter,
-                      color: ColorsApp.white,
-                    ),
-                    onPressed: () {
-                      debugPrint('twitter');
-                    },
+              ),
+              Card(
+                color: ColorsApp.twitterColor,
+                child: IconButton(
+                  icon: FaIcon(
+                    FontAwesomeIcons.twitter,
+                    color: ColorsApp.white,
                   ),
+                  onPressed: () {
+                    debugPrint('twitter');
+                  },
                 ),
-              ],
-            )
-          ],
-        ),
+              ),
+            ],
+          )
+        ],
       ),
     );
   }

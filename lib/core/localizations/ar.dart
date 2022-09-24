@@ -22,4 +22,5 @@ Map<String, String> arEg = {
   'login': 'تسجيل دخول',
   'login_by': 'تسجيل بواسطة',
   'please_waiting': 'من فضلك انتظر قليلا',
+  'sign_up': 'انضمام إلينا',
 };

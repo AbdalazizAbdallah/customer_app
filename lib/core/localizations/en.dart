@@ -22,4 +22,5 @@ Map<String, String> enUs = {
   'login': 'Login',
   'login_by': 'Login by',
   'please_waiting': 'please waiting...',
+  'sign_up': 'Sign up',
 };
