@@ -10,15 +10,14 @@ class DialogWait extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.transparent,
-      body: Center(
+    return AlertDialog(
+      elevation: 0,
+      backgroundColor: ColorsApp.transparent,
+      content: Center(
         child: Card(
-          color: ColorsApp.white,
           child: Padding(
             padding: EdgeInsets.all(SizesApp.r10),
             child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
               children: [
                 const CircularProgressIndicator(),

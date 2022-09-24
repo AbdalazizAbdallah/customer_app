@@ -80,6 +80,10 @@ class LoginPage extends StatelessWidget {
                 Get.dialog(
                   const DialogWait(),
                 );
+                // Future.delayed(
+                //   const Duration(seconds: 3),
+                //   () => Get.back(),
+                // );
               },
             ),
             SizedBox(
