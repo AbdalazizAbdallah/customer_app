@@ -23,4 +23,6 @@ Map<String, String> arEg = {
   'login_by': 'تسجيل بواسطة',
   'please_waiting': 'من فضلك انتظر قليلا',
   'sign_up': 'انضمام إلينا',
+  'invalid_email': 'البريد غير صحيح',
+  'name': 'الاسم',
 };

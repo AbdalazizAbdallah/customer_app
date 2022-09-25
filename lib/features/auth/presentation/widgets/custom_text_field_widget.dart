@@ -2,6 +2,7 @@ import 'package:customer_app/core/constants/colors_app.dart';
 import 'package:customer_app/core/constants/sizes_app.dart';
 import 'package:customer_app/core/constants/styles_app.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 class CustomTextFieldWidget extends StatelessWidget {
@@ -11,6 +12,7 @@ class CustomTextFieldWidget extends StatelessWidget {
     required this.prefixIcon,
     required this.myKeyboardType,
     required this.controllerTextField,
+    this.inputFormatter,
     this.validatorFunction = validateFunctionIsNotEmpty,
     this.myTextInputAction = TextInputAction.next,
   }) : super(key: key);
@@ -21,11 +23,13 @@ class CustomTextFieldWidget extends StatelessWidget {
   final TextInputType myKeyboardType;
   final TextEditingController? controllerTextField;
   final String? Function(String?)? validatorFunction;
+  final List<TextInputFormatter>? inputFormatter;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controllerTextField,
+      inputFormatters: inputFormatter,
       decoration: InputDecoration(
         prefixIcon: Icon(
           prefixIcon,

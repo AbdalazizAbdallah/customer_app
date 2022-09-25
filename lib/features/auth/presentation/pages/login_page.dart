@@ -3,9 +3,9 @@ import 'package:customer_app/core/constants/sizes_app.dart';
 import 'package:customer_app/core/constants/styles_app.dart';
 import 'package:customer_app/core/widgets/custom_button_widget.dart';
 import 'package:customer_app/core/widgets/dialog_wait.dart';
-import 'package:customer_app/features/auth/presentation/controllers/custom_text_field_password_controller.dart';
 import 'package:customer_app/features/auth/presentation/widgets/custom_text_field_password.dart';
 import 'package:customer_app/features/auth/presentation/widgets/custom_text_field_widget.dart';
+import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -15,10 +15,6 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.create(
-      () => CustomTextFieldPasswordController(),
-    );
-
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: SizesApp.r40),
       child: Column(
@@ -26,8 +22,15 @@ class LoginPage extends StatelessWidget {
           CustomTextFieldWidget(
             controllerTextField: TextEditingController(),
             hintText: 'email'.tr,
-            prefixIcon: Icons.person,
-            myKeyboardType: TextInputType.name,
+            prefixIcon: Icons.email,
+            myKeyboardType: TextInputType.emailAddress,
+            validatorFunction: (value) {
+              if (value != null && !EmailValidator.validate(value)) {
+                return 'invalid_email'.tr;
+              } else {
+                return null;
+              }
+            },
           ),
           SizedBox(
             height: SizesApp.r10,

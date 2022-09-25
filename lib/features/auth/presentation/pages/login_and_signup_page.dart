@@ -2,7 +2,7 @@ import 'package:customer_app/core/constants/colors_app.dart';
 import 'package:customer_app/core/constants/images_app.dart';
 import 'package:customer_app/core/constants/sizes_app.dart';
 import 'package:customer_app/core/constants/styles_app.dart';
-import 'package:customer_app/features/auth/presentation/pages/login_page.dart';
+import 'package:customer_app/features/auth/presentation/pages/sign_up_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get_utils/get_utils.dart';
@@ -85,7 +85,7 @@ class LoginAndSignUpPage extends StatelessWidget {
             SizedBox(
               height: SizesApp.r20,
             ),
-            LoginPage(),
+            SignUpPage(),
           ],
         ),
       ),

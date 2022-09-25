@@ -29,14 +29,12 @@ class CustomTextFieldPassword extends StatelessWidget {
               color: ColorsApp.primary,
             ),
             suffixIcon: controller.isVisiable
-                ? IconButton(
-                    splashColor: null,
-                    onPressed: () => controller.changeVisiable(),
-                    icon: Icon(Icons.visibility))
-                : IconButton(
-                    splashColor: null,
-                    onPressed: () => controller.changeVisiable(),
-                    icon: Icon(Icons.visibility_off)),
+                ? InkWell(
+                    onTap: () => controller.changeVisiable(),
+                    child: const Icon(Icons.visibility))
+                : InkWell(
+                    onTap: () => controller.changeVisiable(),
+                    child: const Icon(Icons.visibility_off)),
             hintText: hintText,
             hintStyle: StylesApp.subtitle2,
             border: OutlineInputBorder(
