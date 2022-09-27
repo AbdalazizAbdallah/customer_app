@@ -10,12 +10,14 @@ class CustomTextFieldPassword extends StatelessWidget {
     Key? key,
     required this.hintText,
     required this.controllerTextField,
+    this.validatorFunction = validateFunctionIsNotEmpty,
     this.myTextInputAction = TextInputAction.next,
   }) : super(key: key);
 
   final String hintText;
   final TextInputAction myTextInputAction;
   final TextEditingController? controllerTextField;
+  final String? Function(String?)? validatorFunction;
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +50,7 @@ class CustomTextFieldPassword extends StatelessWidget {
           obscureText: controller.isVisiable,
           autovalidateMode: AutovalidateMode.onUserInteraction,
           keyboardType: TextInputType.visiblePassword,
-          validator: validateFunctionIsNotEmpty,
+          validator: validatorFunction,
         );
       },
     );

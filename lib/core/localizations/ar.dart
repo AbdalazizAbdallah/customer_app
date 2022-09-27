@@ -25,4 +25,6 @@ Map<String, String> arEg = {
   'sign_up': 'انضمام إلينا',
   'invalid_email': 'البريد غير صحيح',
   'name': 'الاسم',
+  'message_login': 'رجاء لكي تطلب يجب ان تسجل دخول',
+  'password_not_matching': 'كلمة السر غير متطابقة'
 };

@@ -1,5 +1,6 @@
 import 'package:customer_app/core/constants/strings_app.dart';
 import 'package:customer_app/core/constants/themes_app.dart';
+import 'package:customer_app/features/auth/presentation/bindings/login_and_signup_page_bindings.dart';
 import 'package:customer_app/features/auth/presentation/pages/login_and_signup_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
           darkTheme: ThemesApp.dark,
           themeMode: ThemeMode.light,
           home: LoginAndSignUpPage(),
+          initialBinding: LoginAndSignupPageBinding(),
           // initialRoute: RoutesApp.initialPage,
           // getPages: RoutesApp.getPages(),
         );

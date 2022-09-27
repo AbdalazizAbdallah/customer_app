@@ -27,4 +27,6 @@ Map<String, String> enUs = {
   'name': 'Name',
   'mobile': 'Mobile',
   'confirm_password': 'Confirm Password',
+  'message_login': 'please to order you must login',
+  'password_not_matching': 'Password not matching'
 };
