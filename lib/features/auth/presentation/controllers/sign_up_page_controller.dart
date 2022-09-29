@@ -1,4 +1,8 @@
+import 'package:customer_app/core/errors/failure.dart';
 import 'package:customer_app/core/utils/helpers.dart';
+import 'package:customer_app/features/auth/domain/entities/user_to_register.dart';
+import 'package:customer_app/features/auth/domain/usecases/register_user_usecase.dart';
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -11,30 +15,38 @@ class SignUpPageController extends GetxController {
   late TextEditingController passwordEditingController;
   late TextEditingController confirmPasswordEditingController;
 
+  final RegisterUserUseCase _registerUserUseCase;
+
+  SignUpPageController(this._registerUserUseCase);
+
   void signUp() {
     if (formKey.currentState!.validate()) {
-      _registerUser(
-        nameEditingController.text,
-        mobileEditingController.text,
-        emailEditingController.text,
-        passwordEditingController.text,
+      UserForRegister userForRegister = UserForRegister(
+        name: nameEditingController.text,
+        email: emailEditingController.text,
+        mobile: mobileEditingController.text,
+        password: passwordEditingController.text,
       );
+
+      _registerUser(userForRegister);
     }
   }
 
-  void _registerUser(
-      String name, String mobile, String email, String password) async {
+  void _registerUser(UserForRegister userForRegister) async {
     // TODO (LATER) : _registerUser
     Helpers.showWaitDialog();
-    await Future.delayed(
-      const Duration(seconds: 3),
-      () => Get.back(),
-    );
-    Get.showSnackbar(
-      const GetSnackBar(
-        message: 'Registration successfully',
-        duration: Duration(seconds: 3),
-      ),
+    Either<Failure, Unit> result =
+        await _registerUserUseCase.call(userForRegister);
+
+    result.fold(
+      (Failure failure) {
+        Get.back();
+        Helpers.showSnackBar(failure.message);
+      },
+      (Unit unit) {
+        Get.back();
+        Helpers.showSnackBar('registration_successfully'.tr);
+      },
     );
   }
 
