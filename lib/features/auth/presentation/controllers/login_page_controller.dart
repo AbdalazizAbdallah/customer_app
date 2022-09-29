@@ -1,4 +1,7 @@
+import 'package:customer_app/core/errors/failure.dart';
 import 'package:customer_app/core/utils/helpers.dart';
+import 'package:customer_app/features/auth/domain/usecases/login_usecase.dart';
+import 'package:dartz/dartz.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -10,6 +13,10 @@ class LoginPageController extends GetxController {
   late TextEditingController passwordEditingController;
 
   bool rememberMeStatus = false;
+
+  final LoginUseCase _loginUseCase;
+
+  LoginPageController(this._loginUseCase);
 
   void changeStatus() {
     rememberMeStatus = !rememberMeStatus;
@@ -25,15 +32,16 @@ class LoginPageController extends GetxController {
   _loginUser(String email, String password) async {
     // TODO (LATER) : _loginUser
     Helpers.showWaitDialog();
-    await Future.delayed(
-      const Duration(seconds: 3),
-      () => Get.back(),
-    );
-    Get.showSnackbar(
-      const GetSnackBar(
-        message: 'login successfully',
-        duration: Duration(seconds: 3),
-      ),
+    Either<Failure, Unit> result = await _loginUseCase.call(email, password);
+    result.fold(
+      (Failure failure) {
+        Get.back();
+        Helpers.showSnackBar(failure.message);
+      },
+      (Unit unit) {
+        Get.back();
+        Helpers.showSnackBar('login_successfully'.tr);
+      },
     );
   }
 
