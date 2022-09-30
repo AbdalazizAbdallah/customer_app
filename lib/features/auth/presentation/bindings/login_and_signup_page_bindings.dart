@@ -1,3 +1,5 @@
+import 'package:customer_app/core/storages/remote_storage/remote_connection_dio.dart';
+import 'package:customer_app/features/auth/data/datasources/remote_data_sources.dart';
 import 'package:customer_app/features/auth/data/respositories/authentication_repository_imp.dart';
 import 'package:customer_app/features/auth/domain/usecases/login_usecase.dart';
 import 'package:customer_app/features/auth/domain/usecases/register_user_usecase.dart';
@@ -10,7 +12,11 @@ import 'package:get/get.dart';
 class LoginAndSignupPageBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => AuthenticationRepositoryImp());
+    Get.put(RemoteConnectionDio());
+    Get.lazyPut(() => RemoteDataSources(Get.find<RemoteConnectionDio>()));
+
+    Get.lazyPut(
+        () => AuthenticationRepositoryImp(Get.find<RemoteDataSources>()));
 
     Get.lazyPut(() => LoginUseCase(Get.find<AuthenticationRepositoryImp>()));
     Get.lazyPut(() => LoginPageController(Get.find<LoginUseCase>()));

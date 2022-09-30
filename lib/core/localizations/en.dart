@@ -30,5 +30,5 @@ Map<String, String> enUs = {
   'message_login': 'please to order you must login',
   'password_not_matching': 'Password not matching',
   'registration_successfully': 'Registration successfully',
-  'login_successfully': 'login_successfully',
+  'login_successfully': 'Login successfully',
 };
