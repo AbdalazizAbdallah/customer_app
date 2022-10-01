@@ -11,11 +11,13 @@ class RemoteConnectionDio {
   RemoteConnectionDio._() {
     _dio = Dio(
       BaseOptions(
-        baseUrl: dotenv.get(StringsApp.baseUrl),
-        contentType: dotenv.get(StringsApp.contentType),
-      ),
+          baseUrl: dotenv.get(StringsApp.baseUrl),
+          validateStatus: (_) => true,
+          headers: {
+            'Accept': 'application/json',
+            'Authorization': '',
+          }),
     );
-    _dio.interceptors.add(PrettyDioLogger());
 // customization
     _dio.interceptors.add(PrettyDioLogger(
         requestHeader: true,
