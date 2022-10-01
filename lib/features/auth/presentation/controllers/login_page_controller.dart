@@ -30,8 +30,8 @@ class LoginPageController extends GetxController {
   }
 
   _loginUser(String email, String password) async {
-    // TODO (LATER) : _loginUser
     Helpers.showWaitDialog();
+    print('//////////');
     Either<Failure, Unit> result = await _loginUseCase.call(email, password);
     result.fold(
       (Failure failure) {
@@ -58,7 +58,6 @@ class LoginPageController extends GetxController {
 
   @override
   void onInit() {
-    // TODO: implement onInit
     formKey = GlobalKey<FormState>();
     emailEditingController = TextEditingController();
     passwordEditingController = TextEditingController();
@@ -67,7 +66,6 @@ class LoginPageController extends GetxController {
 
   @override
   void onClose() {
-    // TODO: implement onClose
     emailEditingController.dispose();
     passwordEditingController.dispose();
     super.onClose();

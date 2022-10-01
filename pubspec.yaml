@@ -50,6 +50,7 @@ dependencies:
   flutter_multi_formatter: ^2.8.0
   dartz: ^0.10.1
   equatable: ^2.0.5
+  connectivity_plus: ^2.3.7
 
 dev_dependencies:
   flutter_test:

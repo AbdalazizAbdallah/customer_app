@@ -31,4 +31,5 @@ Map<String, String> enUs = {
   'password_not_matching': 'Password not matching',
   'registration_successfully': 'Registration successfully',
   'login_successfully': 'Login successfully',
+  'internet_not_available': 'Internet not available ',
 };

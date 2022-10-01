@@ -20,3 +20,7 @@ class UserInvalidInfoException extends ServerNotAvailableException {
 class InternetNotAvailableException extends ServerNotAvailableException {
   InternetNotAvailableException(super.message);
 }
+
+class UnknownException extends ServerNotAvailableException {
+  UnknownException(super.message);
+}

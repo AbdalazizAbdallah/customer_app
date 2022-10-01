@@ -21,17 +21,19 @@ class RemoteDataSources extends RemoteDataSourcesAbstract {
 
   @override
   Future<void> getNewPassword(String email) {
-    // TODO: implement getNewPassword
     throw UnimplementedError();
   }
 
   @override
   Future<BaseAuthModel> login(String email, String password) async {
-    // TODO: implement login
     try {
       var response = await _remoteConnectionDio.dio.post(
         dotenv.get(StringsApp.loginPath),
-        data: {'email': email, 'password': password, 'onesignal_id': '11'},
+        data: {
+          'email': email,
+          'password': password,
+          'onesignal_id': '11',
+        },
       );
 
       print('${response.statusCode}');
@@ -69,8 +71,12 @@ class RemoteDataSources extends RemoteDataSourcesAbstract {
       } else {
         throw ServerNotAvailableException(response.data['message']);
       }
-    } catch (exception) {
-      rethrow;
+    } on DioError catch (e) {
+      if (e.response?.statusCode == 422) {
+        throw ServerNotAvailableException(e.response?.data['message']);
+      } else {
+        throw UnknownException('Unknown Error');
+      }
     }
   }
 }
