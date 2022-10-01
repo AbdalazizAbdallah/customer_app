@@ -10,7 +10,7 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'core/localizations/localization_app.dart';
 
 void main() async {
-  await DotEnv().load();
+  await dotenv.load(fileName: 'assets/.env');
   runApp(const MyApp());
 }
 

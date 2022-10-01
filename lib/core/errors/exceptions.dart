@@ -1,7 +1,26 @@
-class ServerNotAvailableException implements Exception {}
+class ServerNotAvailableException implements Exception {
+  String message;
 
-class UserNotExistException extends ServerNotAvailableException {}
+  ServerNotAvailableException(this.message);
 
-class UserInvalidInfoException extends ServerNotAvailableException {}
+  @override
+  String toString() {
+    return message;
+  }
+}
 
-class InternetNotAvailableException extends ServerNotAvailableException {}
+class UserNotExistException extends ServerNotAvailableException {
+  UserNotExistException(super.message);
+}
+
+class UserInvalidInfoException extends ServerNotAvailableException {
+  UserInvalidInfoException(super.message);
+}
+
+class InternetNotAvailableException extends ServerNotAvailableException {
+  InternetNotAvailableException(super.message);
+}
+
+class UnknownException extends ServerNotAvailableException {
+  UnknownException(super.message);
+}

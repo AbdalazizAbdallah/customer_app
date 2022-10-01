@@ -29,4 +29,5 @@ Map<String, String> arEg = {
   'password_not_matching': 'كلمة السر غير متطابقة',
   'registration_successfully': 'تم التسجيل بنجاح',
   'login_successfully': 'تم تسجيل دخول بنجاح',
+  'internet_not_available': 'الانترنت غير متوفر',
 };

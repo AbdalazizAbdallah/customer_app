@@ -18,7 +18,7 @@ class Helpers {
     Get.showSnackbar(
       GetSnackBar(
         message: messageSnackBar,
-        duration: const Duration(seconds: 4),
+        duration: const Duration(seconds: 2),
         borderRadius: SizesApp.r16,
       ),
     );

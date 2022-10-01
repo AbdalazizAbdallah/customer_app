@@ -12,6 +12,10 @@ class UserNotExistFailure extends Failure {
   const UserNotExistFailure(super.message);
 }
 
+class UnknownFailure extends Failure {
+  const UnknownFailure(super.message);
+}
+
 class UserInvalidInfoFailure extends Failure {
   const UserInvalidInfoFailure(super.message);
 }

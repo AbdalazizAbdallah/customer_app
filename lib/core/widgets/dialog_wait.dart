@@ -10,22 +10,25 @@ class DialogWait extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AlertDialog(
-      elevation: 0,
-      backgroundColor: ColorsApp.transparent,
-      content: Center(
-        child: Card(
-          child: Padding(
-            padding: EdgeInsets.all(SizesApp.r10),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const CircularProgressIndicator(),
-                SizedBox(
-                  width: SizesApp.r10,
-                ),
-                Text('please_waiting'.tr),
-              ],
+    return WillPopScope(
+      onWillPop: () async => false,
+      child: AlertDialog(
+        elevation: 0,
+        backgroundColor: ColorsApp.transparent,
+        content: Center(
+          child: Card(
+            child: Padding(
+              padding: EdgeInsets.all(SizesApp.r10),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const CircularProgressIndicator(),
+                  SizedBox(
+                    width: SizesApp.r10,
+                  ),
+                  Text('please_waiting'.tr),
+                ],
+              ),
             ),
           ),
         ),

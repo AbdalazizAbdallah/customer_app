@@ -33,7 +33,6 @@ class SignUpPageController extends GetxController {
   }
 
   void _registerUser(UserForRegister userForRegister) async {
-    // TODO (LATER) : _registerUser
     Helpers.showWaitDialog();
     Either<Failure, Unit> result =
         await _registerUserUseCase.call(userForRegister);
@@ -52,7 +51,6 @@ class SignUpPageController extends GetxController {
 
   @override
   void onInit() {
-    // TODO: implement onInit
     formKey = GlobalKey<FormState>();
     nameEditingController = TextEditingController();
     mobileEditingController = TextEditingController();
@@ -64,7 +62,6 @@ class SignUpPageController extends GetxController {
 
   @override
   void onClose() {
-    // TODO: implement onClose
     nameEditingController.dispose();
     mobileEditingController.dispose();
     emailEditingController.dispose();
