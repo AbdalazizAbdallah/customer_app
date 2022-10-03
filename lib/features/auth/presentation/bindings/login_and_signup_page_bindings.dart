@@ -12,7 +12,6 @@ import 'package:get/get.dart';
 class LoginAndSignupPageBinding extends Bindings {
   @override
   void dependencies() {
-    Get.put(RemoteConnectionDio());
     Get.lazyPut(() => RemoteDataSources(Get.find<RemoteConnectionDio>()));
 
     Get.lazyPut(
