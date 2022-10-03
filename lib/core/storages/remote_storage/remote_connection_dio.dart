@@ -3,6 +3,8 @@ import 'package:dio/dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
+import '../local_storage/local_storage.dart';
+
 class RemoteConnectionDio {
   late Dio _dio;
 
@@ -11,12 +13,14 @@ class RemoteConnectionDio {
   RemoteConnectionDio._() {
     _dio = Dio(
       BaseOptions(
-          baseUrl: dotenv.get(StringsApp.baseUrl),
-          validateStatus: (_) => true,
-          headers: {
-            'Accept': 'application/json',
-            'Authorization': '',
-          }),
+        baseUrl: dotenv.get(StringsApp.baseUrl),
+        validateStatus: (_) => true,
+        headers: {
+          'Accept': 'application/json',
+          'Authorization':
+              LocalStorage().readValue<String>(StringsApp.token) ?? '',
+        },
+      ),
     );
 // customization
     _dio.interceptors.add(PrettyDioLogger(

@@ -1,15 +1,16 @@
 import 'package:customer_app/core/constants/strings_app.dart';
 import 'package:customer_app/core/errors/exceptions.dart';
 import 'package:customer_app/core/storages/remote_storage/remote_connection_dio.dart';
-import 'package:customer_app/features/auth/data/model/base_auth_model.dart';
+import 'package:customer_app/core/utils/onesignal_config.dart';
+import 'package:customer_app/features/auth/data/model/data_model.dart';
 import 'package:customer_app/features/auth/domain/entities/user_to_register.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 abstract class RemoteDataSourcesAbstract {
-  Future<BaseAuthModel> registerUser(UserForRegister userForRegister);
+  Future<DataModel> registerUser(UserForRegister userForRegister);
 
-  Future<BaseAuthModel> login(String email, String password);
+  Future<DataModel> login(String email, String password);
 
   Future<void> getNewPassword(String email);
 }
@@ -25,20 +26,22 @@ class RemoteDataSources extends RemoteDataSourcesAbstract {
   }
 
   @override
-  Future<BaseAuthModel> login(String email, String password) async {
+  Future<DataModel> login(String email, String password) async {
     try {
+      String playerId = await OnesignalConfig.getOnesignalPlayerId() ?? '';
+
       var response = await _remoteConnectionDio.dio.post(
         dotenv.get(StringsApp.loginPath),
         data: {
           'email': email,
           'password': password,
-          'onesignal_id': '11',
+          'onesignal_id': playerId,
         },
       );
 
       print('${response.statusCode}');
       if (response.statusCode == 200) {
-        return BaseAuthModel.fromJson(response.data);
+        return DataModel.fromJson(response.data['data']);
       } else {
         throw UserInvalidInfoException(response.data['message']);
       }
@@ -52,8 +55,9 @@ class RemoteDataSources extends RemoteDataSourcesAbstract {
   }
 
   @override
-  Future<BaseAuthModel> registerUser(UserForRegister userForRegister) async {
+  Future<DataModel> registerUser(UserForRegister userForRegister) async {
     try {
+      String playerId = await OnesignalConfig.getOnesignalPlayerId() ?? '';
       var response = await _remoteConnectionDio.dio.post(
         dotenv.get(StringsApp.registerPath),
         data: {
@@ -62,12 +66,12 @@ class RemoteDataSources extends RemoteDataSourcesAbstract {
           'mobile': userForRegister.mobile,
           'password_confirmation': userForRegister.password,
           'password': userForRegister.password,
-          'onesignal_id': '11'
+          'onesignal_id': playerId,
         },
       );
 
       if (response.statusCode == 201) {
-        return BaseAuthModel.fromJson(response.data);
+        return DataModel.fromJson(response.data['data']);
       } else {
         throw ServerNotAvailableException(response.data['message']);
       }

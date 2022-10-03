@@ -1,8 +1,10 @@
+import 'package:customer_app/core/constants/strings_app.dart';
 import 'package:customer_app/core/errors/exceptions.dart';
 import 'package:customer_app/core/errors/failure.dart';
+import 'package:customer_app/core/storages/local_storage/local_storage.dart';
 import 'package:customer_app/core/utils/network_info.dart';
 import 'package:customer_app/features/auth/data/datasources/remote_data_sources.dart';
-import 'package:customer_app/features/auth/data/model/base_auth_model.dart';
+import 'package:customer_app/features/auth/data/model/data_model.dart';
 import 'package:customer_app/features/auth/domain/entities/user_to_register.dart';
 import 'package:customer_app/features/auth/domain/repositories/authentication_repository.dart';
 import 'package:dartz/dartz.dart';
@@ -18,7 +20,7 @@ class AuthenticationRepositoryImp extends AuthenticationRepository {
     // TODO: implement getNewPassword
     return Future.delayed(
       const Duration(seconds: 3),
-      () {
+          () {
         return right(unit);
       },
     );
@@ -29,8 +31,9 @@ class AuthenticationRepositoryImp extends AuthenticationRepository {
       {bool rememberMe = false}) async {
     if (await NetworkInfoImpl().isConnected) {
       try {
-        BaseAuthModel baseAuthModel =
-            await _remoteDataSources.login(email, password);
+        DataModel dataModel = await _remoteDataSources.login(email, password);
+        LocalStorage().writeValue(StringsApp.token, dataModel.apiToken);
+
         return right(unit);
       } on UserInvalidInfoException catch (e) {
         return left(UserInvalidInfoFailure(e.message));
@@ -38,18 +41,17 @@ class AuthenticationRepositoryImp extends AuthenticationRepository {
         return left(ServerNotAvailableFailure(e.message));
       }
     } else {
-      print('----------InternetNotAvailableFailure--------------');
       return left(InternetNotAvailableFailure('internet_not_available'.tr));
     }
   }
 
   @override
-  Future<Either<Failure, Unit>> registerUser(
-      UserForRegister userForRegister) async {
+  Future<Either<Failure, Unit>> registerUser(UserForRegister userForRegister) async {
     if (await NetworkInfoImpl().isConnected) {
       try {
-        BaseAuthModel baseAuthModel =
+        DataModel dataModel =
             await _remoteDataSources.registerUser(userForRegister);
+        LocalStorage().writeValue(StringsApp.token, dataModel.apiToken);
         return right(unit);
       } on UnknownException catch (e) {
         return left(UnknownFailure(e.message));
