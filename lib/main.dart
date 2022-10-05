@@ -1,15 +1,16 @@
 import 'package:customer_app/core/constants/strings_app.dart';
 import 'package:customer_app/core/constants/themes_app.dart';
-import 'package:customer_app/core/routes/routes_app.dart';
+import 'package:customer_app/core/dependency.dart';
+import 'package:customer_app/features/auth/presentation/bindings/login_and_signup_page_bindings.dart';
+import 'package:customer_app/features/auth/presentation/pages/login_and_signup_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 import 'core/localizations/localization_app.dart';
 
 void main() async {
-  await DotEnv().load();
+  await Dependency.initGlobalDependency();
   runApp(const MyApp());
 }
 
@@ -32,8 +33,10 @@ class MyApp extends StatelessWidget {
           fallbackLocale: const Locale('en', 'US'),
           darkTheme: ThemesApp.dark,
           themeMode: ThemeMode.light,
-          initialRoute: RoutesApp.initialPage,
-          getPages: RoutesApp.getPages(),
+          home: LoginAndSignUpPage(),
+          initialBinding: LoginAndSignupPageBinding(),
+          // initialRoute: RoutesApp.initialPage,
+          // getPages: RoutesApp.getPages(),
         );
       },
     );
