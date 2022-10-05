@@ -4,6 +4,7 @@ import 'package:customer_app/core/constants/images_app.dart';
 import 'package:customer_app/core/constants/sizes_app.dart';
 import 'package:customer_app/core/constants/styles_app.dart';
 import 'package:customer_app/ui/pages/home_page/controller/home_page_controller.dart';
+import 'package:customer_app/ui/pages/home_page/widgets/drawer_widget.dart';
 import 'package:customer_app/ui/widgets/card_restaurant_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_expandable_fab/flutter_expandable_fab.dart';
@@ -17,12 +18,15 @@ class HomeScreenRestaurant extends GetView<HomeScreenController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: controller.scaffoldKey,
       appBar: AppBar(
         title: const Text('Restaurant'),
         leading: Row(
           children: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                controller.scaffoldKey.currentState!.openDrawer();
+              },
               icon: const Icon(Icons.menu),
             ),
             const Spacer(),
@@ -214,6 +218,7 @@ class HomeScreenRestaurant extends GetView<HomeScreenController> {
           ),
         ],
       ),
+      drawer: const DrawerWidget(),
     );
   }
 }
