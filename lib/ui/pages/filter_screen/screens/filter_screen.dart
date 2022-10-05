@@ -118,7 +118,6 @@ class FilterScreen extends StatelessWidget {
                               .contains(stringFilter),
                           stringFilter: stringFilter,
                         );
-                        ;
                       }).toList()
                     ],
                   );

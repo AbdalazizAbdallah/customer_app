@@ -16,7 +16,7 @@ abstract class RemoteDataSourcesAbstract {
 }
 
 class RemoteDataSources extends RemoteDataSourcesAbstract {
-  RemoteConnectionDio _remoteConnectionDio;
+  final RemoteConnectionDio _remoteConnectionDio;
 
   RemoteDataSources(this._remoteConnectionDio);
 
@@ -39,7 +39,6 @@ class RemoteDataSources extends RemoteDataSourcesAbstract {
         },
       );
 
-      print('${response.statusCode}');
       if (response.statusCode == 200) {
         return DataModel.fromJson(response.data['data']);
       } else {

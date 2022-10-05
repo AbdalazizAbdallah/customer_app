@@ -6,7 +6,7 @@ class ColorsApp {
   static late Color success;
   static late Color danger;
   static Color warning = const Color(0xFFE5B826);
-  static late Color info = const Color(0xFF2C3848);
+  static Color info = const Color(0xFF2C3848);
 
   static Color grey = const Color(0xFF899597);
   static Color greyLight = const Color(0xFFCCCCCC);

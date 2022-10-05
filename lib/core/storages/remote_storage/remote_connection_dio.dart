@@ -37,6 +37,5 @@ class RemoteConnectionDio {
     return _instance ??= RemoteConnectionDio._();
   }
 
-  @override
   Dio get dio => _dio;
 }

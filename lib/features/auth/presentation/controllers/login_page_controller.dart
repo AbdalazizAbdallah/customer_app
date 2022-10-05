@@ -31,7 +31,6 @@ class LoginPageController extends GetxController {
 
   _loginUser(String email, String password) async {
     Helpers.showWaitDialog();
-    print('//////////');
     Either<Failure, Unit> result = await _loginUseCase.call(email, password);
     result.fold(
       (Failure failure) {

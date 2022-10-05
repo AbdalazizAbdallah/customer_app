@@ -11,7 +11,7 @@ import 'package:dartz/dartz.dart';
 import 'package:get/get_utils/get_utils.dart';
 
 class AuthenticationRepositoryImp extends AuthenticationRepository {
-  RemoteDataSourcesAbstract _remoteDataSources;
+  final RemoteDataSourcesAbstract _remoteDataSources;
 
   AuthenticationRepositoryImp(this._remoteDataSources);
 
@@ -20,7 +20,7 @@ class AuthenticationRepositoryImp extends AuthenticationRepository {
     // TODO: implement getNewPassword
     return Future.delayed(
       const Duration(seconds: 3),
-          () {
+      () {
         return right(unit);
       },
     );
