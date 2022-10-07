@@ -8,7 +8,6 @@ import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_multi_formatter/formatters/phone_input_formatter.dart';
 import 'package:get/get.dart';
-import 'package:get/get_utils/get_utils.dart';
 
 class SignUpPage extends GetView<SignUpPageController> {
   const SignUpPage({Key? key}) : super(key: key);

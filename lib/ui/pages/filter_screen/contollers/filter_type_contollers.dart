@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 enum FilterSortTypesEnum {
@@ -49,7 +50,7 @@ class FilterScreenTypesController extends GetxController {
     } else {
       popularFilterSelected.removeWhere((element) => element == stringSelected);
     }
-    print(popularFilterSelected.join(','));
+    debugPrint(popularFilterSelected.join(','));
     update(['chip_value']);
   }
 }

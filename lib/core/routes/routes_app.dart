@@ -1,3 +1,5 @@
+import 'package:customer_app/features/auth/presentation/bindings/login_and_signup_page_bindings.dart';
+import 'package:customer_app/features/auth/presentation/pages/login_and_signup_page.dart';
 import 'package:customer_app/ui/pages/filter_screen/screens/filter_screen.dart';
 import 'package:customer_app/ui/pages/home_page/bindings/home_page_binding.dart';
 import 'package:customer_app/ui/pages/home_page/pages/home_screen_restaurant.dart';
@@ -12,13 +14,10 @@ class RoutesApp {
   static const String onboardingScreen = '/onboardingScreen';
   static const String homeScreen = '/homeScreen';
   static const String filterScreen = '/filterScreen';
+  static const String loginAndSignUpPage = '/LoginAndSignUpPage';
 
   static List<GetPage> getPages() {
     return <GetPage>[
-      // GetPage(
-      //   name: initialPage,
-      //   page: () => const HomePage(),
-      // ),
       GetPage(
         name: splashScreen,
         page: () => const SplashScreen(),
@@ -36,6 +35,11 @@ class RoutesApp {
       GetPage(
         name: filterScreen,
         page: () => const FilterScreen(),
+      ),
+      GetPage(
+        name: loginAndSignUpPage,
+        page: () => const LoginAndSignUpPage(),
+        binding: LoginAndSignupPageBinding(),
       ),
     ];
   }
