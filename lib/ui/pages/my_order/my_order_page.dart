@@ -53,9 +53,13 @@ class MyOrderPage extends StatelessWidget {
               ),
             ),
           ),
-          const Flexible(
+          Flexible(
             flex: 7,
-            child: NoPendingOrder(),
+            child: Container(
+              width: double.infinity,
+              color: ColorsApp.whiteSuger,
+              child: const NoPendingOrderWidget(),
+            ),
           ),
         ],
       ),
