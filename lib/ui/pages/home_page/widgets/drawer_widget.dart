@@ -1,6 +1,7 @@
 import 'package:customer_app/core/constants/colors_app.dart';
 import 'package:customer_app/core/constants/sizes_app.dart';
 import 'package:customer_app/core/constants/styles_app.dart';
+import 'package:customer_app/core/routes/routes_app.dart';
 import 'package:customer_app/ui/pages/home_page/controller/home_page_controller.dart';
 import 'package:customer_app/ui/pages/home_page/widgets/list_tile_drawer_widget.dart';
 import 'package:flutter/material.dart';
@@ -57,7 +58,9 @@ class DrawerWidget extends StatelessWidget {
                 children: [
                   ListTileDrawerWidget(
                     title: 'my_order'.tr,
-                    onTap: () {},
+                    onTap: () {
+                      Get.toNamed(RoutesApp.myOrderPage);
+                    },
                   ),
                   ListTileDrawerWidget(
                     title: 'favorite'.tr,
