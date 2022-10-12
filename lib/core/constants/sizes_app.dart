@@ -23,6 +23,7 @@ class SizesApp {
   static final double r40 = 40.r;
   static final double r25 = 25.r;
   static final double r60 = 60.r;
+  static final double r8 = 8.r;
 
   static const double doubleInfinity = double.infinity;
 
@@ -32,4 +33,6 @@ class SizesApp {
   static final double sp14 = 14.sp;
   static final double sp24 = 24.sp;
   static final double sp18 = 18.sp;
+  static final double sp10 = 10.sp;
+  static final double sp11 = 11.sp;
 }
