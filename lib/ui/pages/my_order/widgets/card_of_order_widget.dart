@@ -141,7 +141,7 @@ class CardOfOrderWidget extends StatelessWidget {
                   ),
                   const Spacer(),
                   Text(
-                    '${'number_of_meals'.tr} (4)',
+                    '${'number_of_meals'.tr}  (4)',
                     style: StylesApp.caption11.copyWith(
                       color: ColorsApp.grey,
                     ),
