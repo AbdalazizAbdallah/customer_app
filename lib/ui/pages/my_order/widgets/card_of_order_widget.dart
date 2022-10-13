@@ -3,11 +3,17 @@ import 'package:customer_app/core/constants/sizes_app.dart';
 import 'package:customer_app/core/constants/styles_app.dart';
 import 'package:customer_app/ui/pages/my_order/widgets/custom_elevated_button_widget2.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CardOfOrderWidget extends StatelessWidget {
   const CardOfOrderWidget({
     Key? key,
+    required this.textPrimaryButton,
+    required this.onPressedPrimary,
   }) : super(key: key);
+
+  final String textPrimaryButton;
+  final void Function()? onPressedPrimary;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +41,7 @@ class CardOfOrderWidget extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.all(SizesApp.r5),
                         child: Text(
-                          'Order number',
+                          'order_number'.tr,
                           style: StylesApp.caption11.copyWith(
                             color: ColorsApp.grey,
                           ),
@@ -44,7 +50,7 @@ class CardOfOrderWidget extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.all(SizesApp.r5),
                         child: Text(
-                          'The restaurant',
+                          'the_restaurant'.tr,
                           style: StylesApp.caption11.copyWith(
                             color: ColorsApp.grey,
                           ),
@@ -53,7 +59,7 @@ class CardOfOrderWidget extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.all(SizesApp.r5),
                         child: Text(
-                          'Time order',
+                          'time_order'.tr,
                           style: StylesApp.caption11.copyWith(
                             color: ColorsApp.grey,
                           ),
@@ -62,7 +68,7 @@ class CardOfOrderWidget extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.all(SizesApp.r5),
                         child: Text(
-                          'status',
+                          'status'.tr,
                           style: StylesApp.caption11.copyWith(
                             color: ColorsApp.grey,
                           ),
@@ -122,20 +128,20 @@ class CardOfOrderWidget extends StatelessWidget {
                 children: [
                   CustomElevatedButtonWidget2(
                     textColor: ColorsApp.primary,
-                    text: 'Path',
-                    onPressed: () {},
+                    text: textPrimaryButton,
+                    onPressed: onPressedPrimary,
                   ),
                   SizedBox(
                     width: SizesApp.r12,
                   ),
                   CustomElevatedButtonWidget2(
-                    textColor: ColorsApp.primary,
-                    text: 'View details',
+                    textColor: ColorsApp.black,
+                    text: 'view_details'.tr,
                     onPressed: () {},
                   ),
                   const Spacer(),
                   Text(
-                    'Number of meals (4)',
+                    '${'number_of_meals'.tr} (4)',
                     style: StylesApp.caption11.copyWith(
                       color: ColorsApp.grey,
                     ),

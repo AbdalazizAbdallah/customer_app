@@ -40,4 +40,11 @@ Map<String, String> arEg = {
   'registration_successfully': 'تم التسجيل بنجاح',
   'login_successfully': 'تم تسجيل دخول بنجاح',
   'internet_not_available': 'الانترنت غير متوفر',
+  'order_number': 'رقم الطلب',
+  'the_restaurant': 'المطعم',
+  'time_order': 'وقت الطلب',
+  'status': 'الحالة',
+  'path': 'المسار',
+  'view_details': 'التفاصيل',
+  'number_of_meals': 'عدد الوجبات',
 };

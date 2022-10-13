@@ -60,7 +60,10 @@ class MyOrderPage extends StatelessWidget {
               color: ColorsApp.whiteSuger,
               child: ListView.builder(
                 itemCount: 10,
-                itemBuilder: (context, index) => const CardOfOrderWidget(),
+                itemBuilder: (context, index) => CardOfOrderWidget(
+                  textPrimaryButton: 'path'.tr,
+                  onPressedPrimary: () {},
+                ),
               ),
             ),
           ),
@@ -69,4 +72,3 @@ class MyOrderPage extends StatelessWidget {
     );
   }
 }
-
