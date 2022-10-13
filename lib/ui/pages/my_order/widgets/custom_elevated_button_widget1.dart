@@ -2,8 +2,8 @@ import 'package:customer_app/core/constants/sizes_app.dart';
 import 'package:customer_app/core/constants/styles_app.dart';
 import 'package:flutter/material.dart';
 
-class CustomElevatedButton extends StatelessWidget {
-  const CustomElevatedButton({
+class CustomElevatedButtonWidget1 extends StatelessWidget {
+  const CustomElevatedButtonWidget1({
     Key? key,
     required this.title,
     required this.count,
