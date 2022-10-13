@@ -1,6 +1,6 @@
 import 'package:customer_app/core/constants/colors_app.dart';
 import 'package:customer_app/core/constants/sizes_app.dart';
-import 'package:customer_app/ui/pages/my_order/widgets/card_of_order_widget.dart';
+import 'package:customer_app/ui/pages/my_order/pages/pending_page.dart';
 import 'package:customer_app/ui/pages/my_order/widgets/custom_elevated_button_widget1.dart';
 import 'package:customer_app/ui/widgets/app_bar_widget.dart';
 import 'package:flutter/material.dart';
@@ -58,13 +58,7 @@ class MyOrderPage extends StatelessWidget {
             child: Container(
               width: double.infinity,
               color: ColorsApp.whiteSuger,
-              child: ListView.builder(
-                itemCount: 10,
-                itemBuilder: (context, index) => CardOfOrderWidget(
-                  textPrimaryButton: 'path'.tr,
-                  onPressedPrimary: () {},
-                ),
-              ),
+              child: const PendingPage(),
             ),
           ),
         ],
