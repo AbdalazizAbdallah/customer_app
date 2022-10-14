@@ -9,12 +9,14 @@ class CustomElevatedButtonWidget1 extends StatelessWidget {
     required this.count,
     required this.backgroundColor,
     required this.textColor,
+    required this.onPressed,
   }) : super(key: key);
 
   final String title;
   final int count;
   final Color backgroundColor;
   final Color textColor;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +32,7 @@ class CustomElevatedButtonWidget1 extends StatelessWidget {
           double.infinity,
         ),
       ),
-      onPressed: () {},
+      onPressed: onPressed,
       child: Center(
         child: Row(
           mainAxisSize: MainAxisSize.min,
