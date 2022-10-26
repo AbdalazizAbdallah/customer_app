@@ -42,4 +42,12 @@ Map<String, String> enUs = {
   'contact_us': 'Contact us',
   'about_us': 'About us',
   'logout': 'Logout',
+  'order_number': 'Order number',
+  'the_restaurant': 'The restaurant',
+  'time_order': 'Time order',
+  'status': 'Status',
+  'path': 'Path',
+  'view_details': 'View details',
+  'number_of_meals': 'Number of meals',
+  'transporter': 'Transporter',
 };

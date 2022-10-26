@@ -43,7 +43,8 @@ class StylesApp {
 
   /// [openSans] ==> 12.sp openSans font
   static final TextStyle caption = GoogleFonts.openSans(
-      fontSize: SizesApp.sp12, fontWeight: FontWeight.w600);
+    fontSize: SizesApp.sp12,
+  );
 
   /// [headline6] ==> 20.sp openSans font1
   static final TextStyle headline6 = GoogleFonts.openSans(
@@ -53,5 +54,10 @@ class StylesApp {
   /// [headline5] ==> 24.sp openSans font1
   static final TextStyle headline5 = GoogleFonts.openSans(
     fontSize: SizesApp.sp24,
+  );
+
+  /// [openSans] ==> 11.sp openSans font
+  static final TextStyle caption11 = GoogleFonts.openSans(
+    fontSize: SizesApp.sp11,
   );
 }

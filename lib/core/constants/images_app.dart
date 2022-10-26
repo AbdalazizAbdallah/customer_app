@@ -19,6 +19,8 @@ class ImagesApp {
   static const String deliveryTypePath = '${_svgPath}deliveryType.svg';
   static const String pickupTypePath = '${_svgPath}pickupType.svg';
 
+  static const String noDataSvgPath = '${_svgPath}noData.svg';
+
   static const String deliveryTimeTypePath = '${_svgPath}delivery_time.svg';
   static const String deliverFreeTypePath = '${_svgPath}delivery_free.svg';
   static const String lowestPath = '${_svgPath}lowest_price.svg';
@@ -29,6 +31,7 @@ class ImagesApp {
       '${_svgPath}backgroundOnboarding2.svg';
 
   static const String orderFood = '${_jsonPath}119398-order-food.json';
+  static const String noData = '${_jsonPath}6510-sad-animation.json';
   static const String orderFood2 =
       '${_jsonPath}99271-food-out-for-delivery.json';
 }
