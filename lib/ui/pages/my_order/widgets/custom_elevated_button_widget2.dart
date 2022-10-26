@@ -28,7 +28,7 @@ class CustomElevatedButtonWidget2 extends StatelessWidget {
           ),
         ),
       ),
-      onPressed: () {},
+      onPressed: onPressed,
       child: Text(
         text,
         style: StylesApp.caption.copyWith(

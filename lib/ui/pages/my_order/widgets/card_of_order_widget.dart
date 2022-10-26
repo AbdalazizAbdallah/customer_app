@@ -2,6 +2,7 @@ import 'package:customer_app/core/constants/colors_app.dart';
 import 'package:customer_app/core/constants/sizes_app.dart';
 import 'package:customer_app/core/constants/styles_app.dart';
 import 'package:customer_app/ui/pages/my_order/widgets/custom_elevated_button_widget2.dart';
+import 'package:customer_app/ui/pages/view_details_order/view_details_order.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -137,7 +138,12 @@ class CardOfOrderWidget extends StatelessWidget {
                   CustomElevatedButtonWidget2(
                     textColor: ColorsApp.black,
                     text: 'view_details'.tr,
-                    onPressed: () {},
+                    onPressed: () {
+                      debugPrint('view details');
+                      Get.dialog(
+                        ViewDetails(),
+                      );
+                    },
                   ),
                   const Spacer(),
                   Text(

@@ -47,4 +47,5 @@ Map<String, String> arEg = {
   'path': 'المسار',
   'view_details': 'التفاصيل',
   'number_of_meals': 'عدد الوجبات',
+  'transporter': 'وسيلة النقل',
 };

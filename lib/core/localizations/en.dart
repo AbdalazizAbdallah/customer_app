@@ -49,4 +49,5 @@ Map<String, String> enUs = {
   'path': 'Path',
   'view_details': 'View details',
   'number_of_meals': 'Number of meals',
+  'transporter': 'Transporter',
 };

@@ -8,7 +8,7 @@ class PendingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<String> orders = [];
+    List<String> orders = ['1'];
     return orders.isEmpty
         ? NoPendingOrderWidget()
         : ListView.builder(
