@@ -125,7 +125,7 @@ class ViewDetails extends StatelessWidget {
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                InkWell(
+                InkResponse(
                   onTap: () {},
                   child: CircleAvatar(
                     radius: 25,
@@ -144,7 +144,7 @@ class ViewDetails extends StatelessWidget {
                 SizedBox(
                   width: SizesApp.r43,
                 ),
-                InkWell(
+                InkResponse(
                   onTap: () {},
                   child: CircleAvatar(
                     radius: 25,
