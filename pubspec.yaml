@@ -54,6 +54,10 @@ dependencies:
   onesignal_flutter: ^3.4.1
   get_storage: ^2.0.3
   grouped_list: ^5.1.2
+  google_maps_flutter: ^2.2.1
+  uuid: ^3.0.6
+  trust_location: ^2.0.13
+  permission_handler: ^10.2.0
 
 dev_dependencies:
   flutter_test:
@@ -79,9 +83,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/
-    - assets/svg/
-    - assets/json_image/
+    - assets/
     - .env
 
   # An image asset can refer to one or more resolution-specific "variants", see

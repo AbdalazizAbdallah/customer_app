@@ -1,10 +1,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.abdalaziz.customer.customer_app">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />`
     <application
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         android:label="customer_app">
+
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBZdI_0y-9_Jn2Vpj3_BRiCgHwwAoHUqkI" />
+
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
