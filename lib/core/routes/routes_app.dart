@@ -27,7 +27,7 @@ class RoutesApp {
         page: () => const SplashScreen(),
       ),
       GetPage(
-        name: homeScreen,
+        name: initialPage,
         page: () => const HomeScreenRestaurant(),
         binding: HomeScreenBinding(),
       ),
@@ -50,7 +50,7 @@ class RoutesApp {
         page: () => const MyOrderPage(),
       ),
       GetPage(
-        name: initialPage,
+        name: mapSample,
         page: () => const MapSample(),
       ),
     ];
