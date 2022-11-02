@@ -2,6 +2,7 @@ import 'package:customer_app/core/constants/colors_app.dart';
 import 'package:customer_app/core/constants/sizes_app.dart';
 import 'package:customer_app/core/constants/styles_app.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 AppBar appBarGoogleMap = AppBar(
   backgroundColor: ColorsApp.transparent,
@@ -14,7 +15,9 @@ AppBar appBarGoogleMap = AppBar(
   ),
   centerTitle: true,
   leading: InkResponse(
-    onTap: () {},
+    onTap: () {
+      Get.back();
+    },
     child: Padding(
       padding: EdgeInsets.all(SizesApp.r10),
       child: CircleAvatar(
