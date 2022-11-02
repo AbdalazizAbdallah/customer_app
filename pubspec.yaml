@@ -101,7 +101,6 @@ flutter:
     - family: SFUIText
       fonts:
         - asset: assets/fonts/SFUIText-Regular.ttf
-    #         style: italic
     - family: dinNext
       fonts:
         - asset: assets/fonts/din-next-lt-w23-regular.ttf

@@ -1,8 +1,10 @@
 import 'dart:async';
 
 import 'package:customer_app/core/constants/colors_app.dart';
+import 'package:customer_app/core/constants/images_app.dart';
 import 'package:customer_app/core/constants/sizes_app.dart';
 import 'package:customer_app/core/constants/styles_app.dart';
+import 'package:customer_app/ui/pages/google_map/widgets/app_bar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -17,93 +19,48 @@ class MapSample extends StatefulWidget {
 
 class MapSampleState extends State<MapSample> {
   final Completer<GoogleMapController> _controller = Completer();
-
-  static const CameraPosition _kGooglePlex = CameraPosition(
-    target: LatLng(31.5219219, 34.6112582),
-    zoom: 10,
-  );
-
-  static const CameraPosition _kLake = CameraPosition(
-      bearing: 192.8334901395799,
-      target: LatLng(37.43296265331129, -122.08832357078792),
-      tilt: 59.440717697143555,
-      zoom: 19.151926040649414);
   late String _mapStyle;
-  var markers2 = <Marker>{
-    // const Marker(
-    //   markerId: MarkerId('fdjklg'),
-    //   visible: true,
-    //   position: LatLng(31.0279993, 35.013154),
-    //   draggable: true,
-    // )
-  };
-
+  late BitmapDescriptor carMarkerIcon;
+  late BitmapDescriptor locationMarkerIcon;
   late LatLng _lastMapPosition;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    rootBundle.loadString('assets/map_style.txt').then((string) {
-      _mapStyle = string;
-    });
+    // BitmapDescriptor.fromAssetImage(
+    //   const ImageConfiguration(
+    //     size: Size(
+    //       12,
+    //       12,
+    //     ),
+    //   ),
+    //   ImagesApp.carMarker,
+    // ).then((value) => carMarkerIcon=value);
+    // BitmapDescriptor.fromAssetImage(
+    //   const ImageConfiguration(
+    //     size: Size(
+    //       12,
+    //       12,
+    //     ),
+    //   ),
+    //   ImagesApp.locationMarkerIcon,
+    // ).then((value) => locationMarkerIcon=value);
+    rootBundle
+        .loadString('assets/map_style.txt')
+        .then((value) => _mapStyle = value);
   }
-
-  var appBar2 = AppBar(
-    backgroundColor: ColorsApp.transparent,
-    elevation: 0,
-    title: Text(
-      'Location',
-      style: StylesApp.headline6.copyWith(
-        fontWeight: FontWeight.w600,
-      ),
-    ),
-    centerTitle: true,
-    leading: InkResponse(
-      onTap: () {},
-      child: Padding(
-        padding: EdgeInsets.all(SizesApp.r10),
-        child: CircleAvatar(
-          backgroundColor: ColorsApp.white,
-          child: Padding(
-            padding: const EdgeInsetsDirectional.only(start: 5),
-            child: Icon(
-              Icons.arrow_back_ios,
-              color: ColorsApp.primary,
-              size: 20,
-            ),
-          ),
-        ),
-      ),
-    ),
-    actions: [
-      InkResponse(
-        onTap: () {},
-        child: Padding(
-          padding: EdgeInsets.all(SizesApp.r10),
-          child: CircleAvatar(
-            backgroundColor: ColorsApp.white,
-            child: Icon(
-              Icons.phone,
-              color: ColorsApp.primary,
-              size: 20,
-            ),
-          ),
-        ),
-      ),
-    ],
-  );
 
   @override
   Widget build(BuildContext context) {
     var edgeInsetsPadding = EdgeInsets.only(
       bottom: 150,
-      top:
-          appBar2.preferredSize.height + MediaQuery.of(context).viewPadding.top,
+      top: appBarGoogleMap.preferredSize.height +
+          MediaQuery.of(context).viewPadding.top,
     );
-    var edgeInsets = EdgeInsets.zero;
+
     return Scaffold(
-      appBar: appBar2,
+      appBar: appBarGoogleMap,
       extendBodyBehindAppBar: true,
       body: SizedBox.expand(
         child: Stack(
@@ -111,46 +68,44 @@ class MapSampleState extends State<MapSample> {
           children: [
             GoogleMap(
               mapType: MapType.normal,
-              indoorViewEnabled: true,
-              buildingsEnabled: true,
-              trafficEnabled: true,
               padding: edgeInsetsPadding,
-              circles: {
-                const Circle(
-                  circleId: CircleId('CircleId1'),
-                  fillColor: Colors.white,
-                  radius: 5000,
-                  center: LatLng(31.0279993, 35.013154),
-                  strokeWidth: 4,
-                  strokeColor: Colors.black,
-                  visible: true,
-                ),
-              },
-              compassEnabled: true,
-              liteModeEnabled: false,
               myLocationEnabled: true,
               myLocationButtonEnabled: true,
-              zoomControlsEnabled: false,
-              markers: markers2,
-              initialCameraPosition: _kGooglePlex,
+              markers: {
+                Marker(
+                  markerId: MarkerId(const Uuid().v4()),
+                  visible: true,
+                  position: const LatLng(31.5219219, 34.6112582),
+                  draggable: true,
+                  // icon: carMarkerIcon,
+                ),
+                Marker(
+                  markerId: MarkerId(const Uuid().v4()),
+                  visible: true,
+                  position: const LatLng(31.698, 34.6112582),
+                  draggable: true,
+                  // icon: locationMarkerIcon,
+                ),
+              },
+              initialCameraPosition: const CameraPosition(
+                target: LatLng(31.5219219, 34.6112582),
+                zoom: 10,
+              ),
               onMapCreated: (GoogleMapController controller) {
                 _controller.complete(controller);
                 controller.setMapStyle(_mapStyle);
-
-                setState(() {
-                  edgeInsets = edgeInsetsPadding;
-                  print('object');
-                });
               },
               onCameraMove: (CameraPosition position) {
                 _lastMapPosition = position.target;
               },
             ),
             Positioned(
-              top: appBar2.preferredSize.height,
+              top: appBarGoogleMap.preferredSize.height,
               bottom: 150,
-              child: const Center(
-                child: Icon(Icons.location_pin),
+              child: Center(
+                child: Image.asset(
+                  ImagesApp.locationMarkerIcon,
+                ),
               ),
             ),
             Align(
@@ -279,45 +234,29 @@ class MapSampleState extends State<MapSample> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () async {
-          final GoogleMapController controller = await _controller.future;
-
-          print(
-              '(MediaQuery.of(context).size.width / 2).toInt()  ${MediaQuery.of(context).size.width} ${(MediaQuery.of(context).size.width / 2).toInt()}');
-          print(
-              '(MediaQuery.of(context).size.height - 150  / 2).toInt()    ${((MediaQuery.of(context).size.height - 150 - appBar2.preferredSize.height) / 2).toInt()}');
-          LatLng lat = await controller.getLatLng(
-            ScreenCoordinate(
-              x: (MediaQuery.of(context).size.width / 2).toInt(),
-              y: ((MediaQuery.of(context).size.height -
-                          150 -
-                          appBar2.preferredSize.height) /
-                      2)
-                  .toInt(),
-            ),
-          );
-          var uuid = const Uuid();
-          bool status = markers2.add(
-            Marker(
-              markerId: MarkerId(uuid.v4()),
-              visible: true,
-              position: _lastMapPosition,
-              draggable: true,
-            ),
-          );
-          print('${lat}  $status  ${markers2}');
-
-          setState(() {});
-        },
-      ),
     );
   }
 
-  Future<void> _goToTheLake() async {
-    final GoogleMapController controller = await _controller.future;
-    controller.animateCamera(CameraUpdate.newCameraPosition(_kLake));
-    print(_mapStyle);
-    controller.setMapStyle(_mapStyle);
+  Future<void> initialSetupMap() async {
+    carMarkerIcon = await BitmapDescriptor.fromAssetImage(
+      const ImageConfiguration(
+        size: Size(
+          12,
+          12,
+        ),
+      ),
+      ImagesApp.carMarker,
+    );
+    debugPrint('${carMarkerIcon}');
+    locationMarkerIcon = await BitmapDescriptor.fromAssetImage(
+      const ImageConfiguration(
+        size: Size(
+          12,
+          12,
+        ),
+      ),
+      ImagesApp.locationMarkerIcon,
+    );
+    _mapStyle = await rootBundle.loadString('assets/map_style.txt');
   }
 }
