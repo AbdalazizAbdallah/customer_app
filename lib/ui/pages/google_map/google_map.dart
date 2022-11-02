@@ -104,7 +104,7 @@ class MapSampleState extends State<MapSample> {
               bottom: 150,
               child: Center(
                 child: Image.asset(
-                  ImagesApp.locationMarkerIcon,
+                  ImagesApp.carMarker,
                 ),
               ),
             ),
@@ -174,6 +174,9 @@ class MapSampleState extends State<MapSample> {
                               ),
                             ),
                           ),
+                          SizedBox(
+                            width: SizesApp.r24,
+                          ),
                           Card(
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10)),
@@ -198,6 +201,9 @@ class MapSampleState extends State<MapSample> {
                                 ],
                               ),
                             ),
+                          ),
+                           SizedBox(
+                            width: SizesApp.r24,
                           ),
                           Card(
                             shape: RoundedRectangleBorder(
