@@ -304,6 +304,15 @@ class OrderDetails extends StatelessWidget {
             SizedBox(
               height: SizesApp.r5,
             ),
+            ListTile(
+              tileColor: ColorsApp.greyLight,
+              title: Text(
+                'Order',
+                style: StylesApp.subtitle1.copyWith(
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            )
           ],
         ),
       ),
