@@ -2,6 +2,7 @@ import 'package:customer_app/core/constants/colors_app.dart';
 import 'package:customer_app/core/constants/images_app.dart';
 import 'package:customer_app/core/constants/sizes_app.dart';
 import 'package:customer_app/core/constants/styles_app.dart';
+import 'package:customer_app/ui/widgets/adnos_item_widget.dart';
 import 'package:customer_app/ui/widgets/app_bar_widget.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
@@ -312,7 +313,8 @@ class OrderDetails extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                 ),
               ),
-            )
+            ),
+            AdnosItemWidget(),
           ],
         ),
       ),
