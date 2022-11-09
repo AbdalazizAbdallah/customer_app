@@ -314,7 +314,79 @@ class OrderDetails extends StatelessWidget {
                 ),
               ),
             ),
-            AdnosItemWidget(),
+            SizedBox(
+              height: SizesApp.r10,
+            ),
+            const AdnosItemWidget(),
+            SizedBox(
+              height: SizesApp.r10,
+            ),
+            const AdnosItemWidget(),
+            SizedBox(
+              height: SizesApp.r10,
+            ),
+            const AdnosItemWidget(),
+            SizedBox(
+              height: SizesApp.r20,
+            ),
+            Padding(
+              padding: EdgeInsets.all(SizesApp.r16),
+              child: SizedBox(
+                width: SizesApp.doubleInfinity,
+                height: 100,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: ColorsApp.grey,
+                      width: 1,
+                    ),
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Stack(
+                    clipBehavior: Clip.none,
+                    children: [
+                      PositionedDirectional(
+                        top: -20,
+                        start: 15,
+                        child: Card(
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: SizesApp.r16,
+                              vertical: SizesApp.r5,
+                            ),
+                            child: Text(
+                              'Note',
+                              style: StylesApp.caption.copyWith(
+                                color: ColorsApp.primary,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: 15,
+                        bottom: 0,
+                        right: 0,
+                        left: 0,
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: SizesApp.r16,
+                          ),
+                          child: Text(
+                              softWrap: true,
+                              maxLines: null,
+                              style: StylesApp.caption.copyWith(
+                                color: ColorsApp.blackLight,
+                              ),
+                              '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ull'),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),
