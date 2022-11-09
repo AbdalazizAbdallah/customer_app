@@ -386,6 +386,78 @@ class OrderDetails extends StatelessWidget {
                   ),
                 ),
               ),
+            ),
+            Container(
+              height: SizesApp.r130,
+              width: SizesApp.doubleInfinity,
+              color: ColorsApp.greyTooLight,
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: SizesApp.r20,
+                  vertical: SizesApp.r12,
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Subtotal',
+                          style: StylesApp.subtitle1,
+                        ),
+                        Text(
+                          '120.0 £',
+                          style: StylesApp.subtitle1,
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Delivery fee',
+                          style: StylesApp.subtitle1,
+                        ),
+                        Text(
+                          '20.5 £',
+                          style: StylesApp.subtitle1,
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Rider tip',
+                          style: StylesApp.subtitle1,
+                        ),
+                        Text(
+                          '20.5 £',
+                          style: StylesApp.subtitle1,
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Order Total',
+                          style: StylesApp.headline7.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          '120.5 £',
+                          style: StylesApp.headline7.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
             )
           ],
         ),
