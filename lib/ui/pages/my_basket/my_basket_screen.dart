@@ -1,12 +1,11 @@
+import 'dart:developer';
+
 import 'package:customer_app/core/constants/colors_app.dart';
 import 'package:customer_app/core/constants/sizes_app.dart';
 import 'package:customer_app/core/constants/styles_app.dart';
 import 'package:customer_app/ui/pages/my_basket/widgets/slide_adons_Item_widget.dart';
-import 'package:customer_app/ui/widgets/adnos_item_widget.dart';
 import 'package:customer_app/ui/widgets/app_bar_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 
 class MyBasketScreen extends StatelessWidget {
@@ -16,7 +15,7 @@ class MyBasketScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: getAppBar(title: 'my_basket'.tr),
-      body: Column(
+      body: ListView(
         children: [
           ListTile(
             tileColor: ColorsApp.greyTooLight,
@@ -54,15 +53,15 @@ class MyBasketScreen extends StatelessWidget {
                 horizontal: SizesApp.r5, vertical: SizesApp.r20),
             child: Column(
               children: [
-                SlideAdonsItemWidget(),
+                const SlideAdonsItemWidget(),
                 SizedBox(
                   height: SizesApp.r5,
                 ),
-                SlideAdonsItemWidget(),
+                const SlideAdonsItemWidget(),
                 SizedBox(
                   height: SizesApp.r5,
                 ),
-                SlideAdonsItemWidget(),
+                const SlideAdonsItemWidget(),
               ],
             ),
           ),
@@ -109,9 +108,93 @@ class MyBasketScreen extends StatelessWidget {
                 ),
                 TextButton(
                   onPressed: () {},
-                  child: Text('Add vocher code'),
+                  child: const Text('Add vocher code'),
                 ),
               ],
+            ),
+          ),
+          Container(
+            height: SizesApp.r105,
+            color: ColorsApp.greyTooLight,
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                  horizontal: SizesApp.r20, vertical: SizesApp.r10),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Delivery fee',
+                        style: StylesApp.subtitle1,
+                      ),
+                      Text(
+                        '20.0 £',
+                        style: StylesApp.subtitle1,
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Rider tip',
+                        style: StylesApp.subtitle1,
+                      ),
+                      Text(
+                        '20.0 £',
+                        style: StylesApp.subtitle1,
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Order Total',
+                        style: StylesApp.headline7.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        '20.0 £',
+                        style: StylesApp.headline7.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+          DecoratedBox(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+                colors: [
+                  ColorsApp.primaryRightGradient,
+                  ColorsApp.primaryLeftGradient,
+                ],
+              ),
+            ),
+            child: ListTile(
+              onTap: () {
+                log('Checkout');
+              },
+              title: Text(
+                'Go to check out',
+                style: StylesApp.subtitle1.copyWith(
+                  fontWeight: FontWeight.w600,
+                  color: ColorsApp.white,
+                ),
+              ),
+              trailing: Icon(
+                Icons.arrow_forward,
+                color: ColorsApp.white,
+              ),
             ),
           )
         ],
