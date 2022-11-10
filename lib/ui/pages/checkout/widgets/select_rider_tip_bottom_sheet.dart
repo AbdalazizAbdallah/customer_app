@@ -4,6 +4,7 @@ import 'package:customer_app/core/constants/colors_app.dart';
 import 'package:customer_app/core/constants/sizes_app.dart';
 import 'package:customer_app/core/constants/styles_app.dart';
 import 'package:customer_app/core/widgets/custom_button_widget.dart';
+import 'package:customer_app/ui/pages/checkout/widgets/select_delivery_time_bottom_sheet.dart';
 import 'package:customer_app/ui/pages/checkout/widgets/triangle_pointer.dart';
 import 'package:customer_app/ui/widgets/header_dialogs_widget.dart';
 import 'package:flutter/cupertino.dart';
@@ -96,7 +97,23 @@ class SelectRiderTipBottomSheet extends StatelessWidget {
               ),
               child: CustomButtonWidget(
                 title: 'add'.tr,
-                onPressed: () {},
+                onPressed: () {
+                  log('add Rider tip');
+                  Get.back();
+                  Get.bottomSheet(
+                    backgroundColor: ColorsApp.white,
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(10),
+                        topRight: Radius.circular(10),
+                      ),
+                    ),
+                    const FractionallySizedBox(
+                      heightFactor: 1,
+                      child: SelectDeliveryTimeBottomSheet(),
+                    ),
+                  );
+                },
               ),
             ),
           )

@@ -52,4 +52,5 @@ Map<String, String> enUs = {
   'transporter': 'Transporter',
   'my_basket': 'My Basket',
   'add': 'Add',
+  'next': ' Next',
 };

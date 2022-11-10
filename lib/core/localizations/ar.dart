@@ -50,4 +50,5 @@ Map<String, String> arEg = {
   'transporter': 'وسيلة النقل',
   'my_basket': 'سلتي',
   'add': 'إضافة',
+  'next': 'التالي',
 };
