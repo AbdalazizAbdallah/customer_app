@@ -191,14 +191,16 @@ class MyBasketScreen extends StatelessWidget {
                 log('Checkout');
                 Get.bottomSheet(
                   backgroundColor: ColorsApp.white,
-                  
                   shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(10),
                       topRight: Radius.circular(10),
                     ),
                   ),
-                  const SelectRiderTipBottomSheet(),
+                  const FractionallySizedBox(
+                    heightFactor: 0.8,
+                    child: SelectRiderTipBottomSheet(),
+                  ),
                 );
               },
               title: Text(
