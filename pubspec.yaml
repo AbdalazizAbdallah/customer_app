@@ -58,6 +58,7 @@ dependencies:
   uuid: ^3.0.6
   trust_location: ^2.0.13
   permission_handler: ^10.2.0
+  flutter_slidable: ^2.0.0
 
 dev_dependencies:
   flutter_test:

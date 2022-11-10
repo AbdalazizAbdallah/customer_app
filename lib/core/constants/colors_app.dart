@@ -4,7 +4,7 @@ class ColorsApp {
   static Color primary = const Color(0xFF3ED3CD);
   static late Color secondary;
   static late Color success;
-  static late Color danger;
+  static late Color danger = const Color(0xFFD64F5D);
   static Color warning = const Color(0xFFE5B826);
   static Color info = const Color(0xFF2C3848);
 
