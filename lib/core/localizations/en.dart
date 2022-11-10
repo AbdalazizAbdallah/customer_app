@@ -51,4 +51,5 @@ Map<String, String> enUs = {
   'number_of_meals': 'Number of meals',
   'transporter': 'Transporter',
   'my_basket': 'My Basket',
+  'add': 'Add',
 };

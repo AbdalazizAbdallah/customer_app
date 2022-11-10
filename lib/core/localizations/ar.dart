@@ -49,4 +49,5 @@ Map<String, String> arEg = {
   'number_of_meals': 'عدد الوجبات',
   'transporter': 'وسيلة النقل',
   'my_basket': 'سلتي',
+  'add': 'إضافة',
 };

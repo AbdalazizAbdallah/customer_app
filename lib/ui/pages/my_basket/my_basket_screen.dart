@@ -3,10 +3,16 @@ import 'dart:developer';
 import 'package:customer_app/core/constants/colors_app.dart';
 import 'package:customer_app/core/constants/sizes_app.dart';
 import 'package:customer_app/core/constants/styles_app.dart';
+import 'package:customer_app/core/widgets/custom_button_widget.dart';
+import 'package:customer_app/ui/pages/checkout/widgets/select_rider_tip_bottom_sheet.dart';
 import 'package:customer_app/ui/pages/my_basket/widgets/slide_adons_Item_widget.dart';
+import 'package:customer_app/ui/pages/checkout/widgets/triangle_pointer.dart';
 import 'package:customer_app/ui/widgets/app_bar_widget.dart';
+import 'package:customer_app/ui/widgets/header_dialogs_widget.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'dart:math' as math; // import this
 
 class MyBasketScreen extends StatelessWidget {
   const MyBasketScreen({super.key});
@@ -183,6 +189,17 @@ class MyBasketScreen extends StatelessWidget {
             child: ListTile(
               onTap: () {
                 log('Checkout');
+                Get.bottomSheet(
+                  backgroundColor: ColorsApp.white,
+                  
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(10),
+                      topRight: Radius.circular(10),
+                    ),
+                  ),
+                  const SelectRiderTipBottomSheet(),
+                );
               },
               title: Text(
                 'Go to check out',
