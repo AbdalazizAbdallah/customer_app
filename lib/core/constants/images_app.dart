@@ -2,14 +2,18 @@ class ImagesApp {
   static const String _imagePath = 'assets/images/';
   static const String _svgPath = 'assets/svg/';
   static const String _jsonPath = 'assets/json_image/';
+
   static const String backgroundSplashPath =
       '${_imagePath}backgroundSplash.png';
-
   static const String imageFood1Path = '${_imagePath}food1.png';
   static const String imageFood2Path = '${_imagePath}food2.jpg';
   static const String imageFood3Path = '${_imagePath}food3.png';
   static const String imageFood4Path = '${_imagePath}food4.png';
   static const String imageNotFoundPath = '${_imagePath}notFoundFood.png';
+
+  static const String carMarker = '${_imagePath}carMarker.png';
+  static const String locationMarkerIcon =
+      '${_imagePath}locationMarkerIcon.png';
 
   static const String wholeLogoPath = '${_svgPath}white_whole_logo.svg';
   static const String logoPath = '${_svgPath}whole_logo.svg';

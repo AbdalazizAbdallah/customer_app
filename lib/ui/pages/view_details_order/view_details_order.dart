@@ -1,9 +1,11 @@
 import 'package:customer_app/core/constants/colors_app.dart';
 import 'package:customer_app/core/constants/sizes_app.dart';
 import 'package:customer_app/core/constants/styles_app.dart';
+import 'package:customer_app/core/routes/routes_app.dart';
 import 'package:customer_app/ui/widgets/header_dialogs_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:get/get_utils/get_utils.dart';
 
 class ViewDetails extends StatelessWidget {
@@ -126,7 +128,10 @@ class ViewDetails extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 InkResponse(
-                  onTap: () {},
+                  onTap: () {
+                    Get.back();
+                    Get.toNamed(RoutesApp.mapSample);
+                  },
                   child: CircleAvatar(
                     radius: 25,
                     backgroundColor: ColorsApp.greyTooLight,

@@ -1,11 +1,13 @@
 import 'package:customer_app/features/auth/presentation/bindings/login_and_signup_page_bindings.dart';
 import 'package:customer_app/features/auth/presentation/pages/login_and_signup_page.dart';
 import 'package:customer_app/ui/pages/filter_screen/screens/filter_screen.dart';
+import 'package:customer_app/ui/pages/google_map/google_map.dart';
 import 'package:customer_app/ui/pages/home_page/bindings/home_page_binding.dart';
 import 'package:customer_app/ui/pages/home_page/pages/home_screen_restaurant.dart';
 import 'package:customer_app/ui/pages/my_order/pages/my_order_page.dart';
 import 'package:customer_app/ui/pages/onboarding_screen/bindings/onboarding_screen_binding.dart';
 import 'package:customer_app/ui/pages/onboarding_screen/pages/onboarding_screen.dart';
+import 'package:customer_app/ui/pages/order_detials/order_detials.dart';
 import 'package:customer_app/ui/pages/splash_screen.dart';
 import 'package:get/get.dart';
 
@@ -17,6 +19,8 @@ class RoutesApp {
   static const String filterScreen = '/filterScreen';
   static const String loginAndSignUpPage = '/LoginAndSignUpPage';
   static const String myOrderPage = '/myOrderPage';
+  static const String mapSample = '/mapSample';
+  static const String orderDetials = '/orderDetials';
 
   static List<GetPage> getPages() {
     return <GetPage>[
@@ -46,6 +50,14 @@ class RoutesApp {
       GetPage(
         name: myOrderPage,
         page: () => const MyOrderPage(),
+      ),
+      GetPage(
+        name: mapSample,
+        page: () => const MapSample(),
+      ),
+      GetPage(
+        name: orderDetials,
+        page: () => const OrderDetails(),
       ),
     ];
   }
