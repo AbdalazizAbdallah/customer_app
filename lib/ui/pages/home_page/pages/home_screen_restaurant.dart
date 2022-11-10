@@ -57,7 +57,9 @@ class HomeScreenRestaurant extends GetView<HomeScreenController> {
           Row(
             children: [
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed(RoutesApp.myBasketScreen);
+                },
                 icon: FaIcon(
                   FontAwesomeIcons.basketShopping,
                   color: ColorsApp.primary,

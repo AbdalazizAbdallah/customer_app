@@ -4,6 +4,7 @@ import 'package:customer_app/ui/pages/filter_screen/screens/filter_screen.dart';
 import 'package:customer_app/ui/pages/google_map/google_map.dart';
 import 'package:customer_app/ui/pages/home_page/bindings/home_page_binding.dart';
 import 'package:customer_app/ui/pages/home_page/pages/home_screen_restaurant.dart';
+import 'package:customer_app/ui/pages/my_basket/my_basket_screen.dart';
 import 'package:customer_app/ui/pages/my_order/pages/my_order_page.dart';
 import 'package:customer_app/ui/pages/onboarding_screen/bindings/onboarding_screen_binding.dart';
 import 'package:customer_app/ui/pages/onboarding_screen/pages/onboarding_screen.dart';
@@ -21,6 +22,7 @@ class RoutesApp {
   static const String myOrderPage = '/myOrderPage';
   static const String mapSample = '/mapSample';
   static const String orderDetials = '/orderDetials';
+  static const String myBasketScreen = '/myBasketScreen';
 
   static List<GetPage> getPages() {
     return <GetPage>[
@@ -58,6 +60,10 @@ class RoutesApp {
       GetPage(
         name: orderDetials,
         page: () => const OrderDetails(),
+      ),
+       GetPage(
+        name: myBasketScreen,
+        page: () => const MyBasketScreen(),
       ),
     ];
   }
