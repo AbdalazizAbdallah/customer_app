@@ -10,6 +10,7 @@ import 'package:customer_app/ui/widgets/card_restaurant_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_expandable_fab/flutter_expandable_fab.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -57,8 +58,9 @@ class HomeScreenRestaurant extends GetView<HomeScreenController> {
             children: [
               IconButton(
                 onPressed: () {},
-                icon: const Icon(
-                  Icons.location_on,
+                icon: FaIcon(
+                  FontAwesomeIcons.basketShopping,
+                  color: ColorsApp.primary,
                 ),
               ),
               IconButton(
