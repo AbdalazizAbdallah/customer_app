@@ -1,8 +1,10 @@
 import 'package:customer_app/core/constants/sizes_app.dart';
 import 'package:customer_app/core/constants/styles_app.dart';
+import 'package:customer_app/ui/pages/checkout/widgets/select_payment_bottom_sheet.dart';
 import 'package:customer_app/ui/widgets/app_bar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 import '../../../../core/constants/colors_app.dart';
@@ -185,7 +187,21 @@ class CheckoutPage extends StatelessWidget {
           ),
         ),
         child: ListTile(
-          onTap: () {},
+          onTap: () {
+            Get.bottomSheet(
+              backgroundColor: ColorsApp.white,
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(10),
+                  topRight: Radius.circular(10),
+                ),
+              ),
+              const FractionallySizedBox(
+                heightFactor: 0.6,
+                child: SelectPaymentBottomSheet(),
+              ),
+            );
+          },
           title: Text(
             'Buy now',
             textAlign: TextAlign.center,
