@@ -12,6 +12,8 @@ import 'package:customer_app/ui/pages/order_detials/order_detials.dart';
 import 'package:customer_app/ui/pages/splash_screen.dart';
 import 'package:get/get.dart';
 
+import '../../ui/pages/checkout/pages/checkout_page.dart';
+
 class RoutesApp {
   static const String initialPage = '/';
   static const String splashScreen = '/splashScreen';
@@ -62,8 +64,12 @@ class RoutesApp {
         page: () => const OrderDetails(),
       ),
        GetPage(
-        name: myBasketScreen,
+        name: '/1myBasketScreen',
         page: () => const MyBasketScreen(),
+      ),
+       GetPage(
+        name: myBasketScreen,
+        page: () => const CheckoutPage(),
       ),
     ];
   }
