@@ -26,6 +26,9 @@ class RoutesApp {
   static const String mapSample = '/mapSample';
   static const String orderDetials = '/orderDetials';
   static const String myBasketScreen = '/myBasketScreen';
+  static const String checkoutPage = '/checkoutPage';
+  static const String successMessageCompleteOrderPage =
+      '/successMessageCompleteOrderPage';
 
   static List<GetPage> getPages() {
     return <GetPage>[
@@ -65,15 +68,15 @@ class RoutesApp {
         page: () => const OrderDetails(),
       ),
       GetPage(
-        name: '/1myBasketScreen',
+        name: myBasketScreen,
         page: () => const MyBasketScreen(),
       ),
       GetPage(
-        name: '/44myBasketScreen',
+        name: checkoutPage,
         page: () => const CheckoutPage(),
       ),
       GetPage(
-        name: myBasketScreen,
+        name: successMessageCompleteOrderPage,
         page: () => const SuccessMessageCompleteOrderPage(),
       ),
     ];

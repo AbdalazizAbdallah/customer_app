@@ -3,6 +3,9 @@ import 'package:customer_app/core/constants/sizes_app.dart';
 import 'package:customer_app/core/constants/styles_app.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
+
+import '../../../../core/routes/routes_app.dart';
 
 class SelectPaymentBottomSheet extends StatelessWidget {
   const SelectPaymentBottomSheet({
@@ -44,6 +47,7 @@ class SelectPaymentBottomSheet extends StatelessWidget {
           ),
           const Spacer(),
           ListTile(
+            onTap: goToSuccessCompletePage,
             title: Text(
               'Add Payment method',
               style: StylesApp.headline7,
@@ -62,6 +66,7 @@ class SelectPaymentBottomSheet extends StatelessWidget {
             color: ColorsApp.grey.withOpacity(0.4),
           ),
           ListTile(
+            onTap: goToSuccessCompletePage,
             title: Text(
               'Scan your card',
               style: StylesApp.headline7,
@@ -80,5 +85,9 @@ class SelectPaymentBottomSheet extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  void goToSuccessCompletePage() {
+    Get.toNamed(RoutesApp.successMessageCompleteOrderPage);
   }
 }

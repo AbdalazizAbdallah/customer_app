@@ -1,9 +1,11 @@
 import 'package:customer_app/core/constants/colors_app.dart';
 import 'package:customer_app/core/constants/sizes_app.dart';
 import 'package:customer_app/core/constants/styles_app.dart';
+import 'package:customer_app/core/routes/routes_app.dart';
 import 'package:customer_app/ui/widgets/header_dialogs_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 
 class DeliveryLocationBottomSheet extends StatelessWidget {
   const DeliveryLocationBottomSheet({
@@ -29,6 +31,7 @@ class DeliveryLocationBottomSheet extends StatelessWidget {
           ),
           const Spacer(),
           ListTile(
+            onTap: goToCheckoutPage,
             title: Text(
               'Add new address',
               style: StylesApp.headline7,
@@ -51,6 +54,7 @@ class DeliveryLocationBottomSheet extends StatelessWidget {
             child: Column(
               children: [
                 ListTile(
+                  onTap: goToCheckoutPage,
                   title: Text(
                     'my address list',
                     style: StylesApp.headline7,
@@ -72,6 +76,7 @@ class DeliveryLocationBottomSheet extends StatelessWidget {
             ),
           ),
           ListTile(
+            onTap: goToCheckoutPage,
             title: Text(
               'Deliver to my current Location',
               style: StylesApp.headline7,
@@ -90,5 +95,9 @@ class DeliveryLocationBottomSheet extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  void goToCheckoutPage() {
+    Get.toNamed(RoutesApp.checkoutPage);
   }
 }

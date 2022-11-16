@@ -2,7 +2,9 @@ import 'package:customer_app/core/constants/colors_app.dart';
 import 'package:customer_app/core/constants/images_app.dart';
 import 'package:customer_app/core/constants/sizes_app.dart';
 import 'package:customer_app/core/constants/styles_app.dart';
+import 'package:customer_app/core/routes/routes_app.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
 class SuccessMessageCompleteOrderPage extends StatelessWidget {
@@ -52,7 +54,9 @@ class SuccessMessageCompleteOrderPage extends StatelessWidget {
             ],
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Get.offAndToNamed(RoutesApp.initialPage);
+            },
             child: const Text('close'),
           ),
         ],
