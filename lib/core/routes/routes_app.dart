@@ -13,6 +13,7 @@ import 'package:customer_app/ui/pages/splash_screen.dart';
 import 'package:get/get.dart';
 
 import '../../ui/pages/checkout/pages/checkout_page.dart';
+import '../../ui/pages/checkout/pages/success_message_complete_order_page.dart';
 
 class RoutesApp {
   static const String initialPage = '/';
@@ -63,13 +64,17 @@ class RoutesApp {
         name: orderDetials,
         page: () => const OrderDetails(),
       ),
-       GetPage(
+      GetPage(
         name: '/1myBasketScreen',
         page: () => const MyBasketScreen(),
       ),
-       GetPage(
-        name: myBasketScreen,
+      GetPage(
+        name: '/44myBasketScreen',
         page: () => const CheckoutPage(),
+      ),
+      GetPage(
+        name: myBasketScreen,
+        page: () => const SuccessMessageCompleteOrderPage(),
       ),
     ];
   }
