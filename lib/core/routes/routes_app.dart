@@ -12,6 +12,9 @@ import 'package:customer_app/ui/pages/order_detials/order_detials.dart';
 import 'package:customer_app/ui/pages/splash_screen.dart';
 import 'package:get/get.dart';
 
+import '../../ui/pages/checkout/pages/checkout_page.dart';
+import '../../ui/pages/checkout/pages/success_message_complete_order_page.dart';
+
 class RoutesApp {
   static const String initialPage = '/';
   static const String splashScreen = '/splashScreen';
@@ -23,6 +26,9 @@ class RoutesApp {
   static const String mapSample = '/mapSample';
   static const String orderDetials = '/orderDetials';
   static const String myBasketScreen = '/myBasketScreen';
+  static const String checkoutPage = '/checkoutPage';
+  static const String successMessageCompleteOrderPage =
+      '/successMessageCompleteOrderPage';
 
   static List<GetPage> getPages() {
     return <GetPage>[
@@ -61,9 +67,17 @@ class RoutesApp {
         name: orderDetials,
         page: () => const OrderDetails(),
       ),
-       GetPage(
+      GetPage(
         name: myBasketScreen,
         page: () => const MyBasketScreen(),
+      ),
+      GetPage(
+        name: checkoutPage,
+        page: () => const CheckoutPage(),
+      ),
+      GetPage(
+        name: successMessageCompleteOrderPage,
+        page: () => const SuccessMessageCompleteOrderPage(),
       ),
     ];
   }

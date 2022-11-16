@@ -36,6 +36,7 @@ class ImagesApp {
 
   static const String orderFood = '${_jsonPath}119398-order-food.json';
   static const String noData = '${_jsonPath}6510-sad-animation.json';
+  static const String orderConfirmed = '${_jsonPath}orderConfirmed.json';
   static const String orderFood2 =
       '${_jsonPath}99271-food-out-for-delivery.json';
 }
