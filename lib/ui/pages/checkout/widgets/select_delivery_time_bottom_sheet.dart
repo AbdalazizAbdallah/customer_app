@@ -14,6 +14,8 @@ import 'dart:math' as math;
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
+import 'delivery_location_bottom_sheet.dart';
+
 class SelectDeliveryTimeBottomSheet extends StatelessWidget {
   const SelectDeliveryTimeBottomSheet({
     Key? key,
@@ -210,7 +212,22 @@ class SelectDeliveryTimeBottomSheet extends StatelessWidget {
               ),
               child: CustomButtonWidget(
                 title: 'next'.tr,
-                onPressed: () {},
+                onPressed: () {
+                  Get.back();
+                  Get.bottomSheet(
+                    backgroundColor: ColorsApp.white,
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(10),
+                        topRight: Radius.circular(10),
+                      ),
+                    ),
+                    const FractionallySizedBox(
+                      heightFactor: 0.8,
+                      child: DeliveryLocationBottomSheet(),
+                    ),
+                  );
+                },
               ),
             ),
           )
