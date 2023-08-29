@@ -10,6 +10,7 @@ import 'core/routes/routes_app.dart';
 
 void main() async {
   await Dependency.initGlobalDependency();
+  
   runApp(const MyApp());
 }
 
